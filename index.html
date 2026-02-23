@@ -854,7 +854,7 @@ function buildWaMessage(score, values){
   // ── Missed parameters (alert style) ──
   const missed = PARAMS.filter(p => (values[p.id] || 0) === 0).map(p => p.name);
   if(missed.length > 0){
-    msg += `\n⚠️⚠️⚠️ *ATTENTION REQUIRED* ⚠️⚠️⚠️\n\n`;
+    msg += `\n⚠️ *ATTENTION REQUIRED* ⚠️\n\n`;
     msg += `❌ *MISSED PARAMETERS (${missed.length})*\n\n`;
     missed.forEach(m => { msg += `🔴 ${m}\n`; });
     msg += `\n⚠️ Please focus tomorrow.\n`;
