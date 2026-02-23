@@ -16,7 +16,6 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Noto Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex}
-
 .sidebar{width:260px;background:linear-gradient(180deg,var(--primary) 0%,#0d2448 100%);
   min-height:100vh;display:flex;flex-direction:column;flex-shrink:0;
   box-shadow:4px 0 20px rgba(15,45,94,0.25);position:fixed;top:0;left:0;z-index:100}
@@ -36,7 +35,6 @@ body{font-family:'Noto Sans',sans-serif;background:var(--bg);color:var(--text);m
 .nav-item .ni-icon{font-size:18px;flex-shrink:0}
 .sidebar-footer{padding:16px;border-top:1px solid rgba(255,255,255,0.1);
   font-size:11px;color:rgba(255,255,255,0.4);text-align:center}
-
 .main{flex:1;margin-left:260px;display:flex;flex-direction:column;min-height:100vh}
 .topbar{background:#fff;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;
   box-shadow:0 2px 12px rgba(0,0,0,0.07);position:sticky;top:0;z-index:50}
@@ -47,292 +45,142 @@ body{font-family:'Noto Sans',sans-serif;background:var(--bg);color:var(--text);m
 .badge-live::before{content:'';width:8px;height:8px;background:var(--success);
   border-radius:50%;animation:pulse 1.5s ease infinite}
 .content{flex:1;padding:24px 28px}
-
 .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;margin-bottom:20px}
 .card-title{font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;color:var(--primary);
   margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
 .card-title .ct-left{display:flex;align-items:center;gap:8px}
 .ct-icon{width:32px;height:32px;background:linear-gradient(135deg,var(--primary-mid),var(--primary-light));
   border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px}
-
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:24px}
-.stat-card{background:var(--card);border-radius:14px;padding:18px;box-shadow:var(--shadow);
-  border-left:4px solid var(--primary-mid)}
-.stat-card.sc-green{border-left-color:var(--success)}
-.stat-card.sc-red{border-left-color:var(--danger)}
-.stat-card.sc-orange{border-left-color:var(--warning)}
+.stat-card{background:var(--card);border-radius:14px;padding:18px;box-shadow:var(--shadow);border-left:4px solid var(--primary-mid)}
+.stat-card.sc-green{border-left-color:var(--success)}.stat-card.sc-red{border-left-color:var(--danger)}.stat-card.sc-orange{border-left-color:var(--warning)}
 .stat-val{font-family:'Rajdhani',sans-serif;font-size:32px;font-weight:700;color:var(--primary)}
 .stat-label{font-size:12px;color:var(--muted);margin-top:2px}
-
 .table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border)}
 table{width:100%;border-collapse:collapse;font-size:13.5px}
 thead tr{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);color:#fff}
-th{padding:12px 14px;text-align:left;font-family:'Rajdhani',sans-serif;font-weight:700;
-  font-size:14px;letter-spacing:0.3px;white-space:nowrap}
+th{padding:12px 14px;text-align:left;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.3px;white-space:nowrap}
 td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:middle}
 tbody tr:last-child td{border-bottom:none}
 tbody tr:hover{background:#f7f9fc}
 tbody tr:nth-child(even){background:#fafbfc}
 tbody tr:nth-child(even):hover{background:#f7f9fc}
-
-.rank-badge{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;
-  justify-content:center;font-weight:700;font-size:12px;color:#fff}
-.rank-1{background:linear-gradient(135deg,#FFD700,#FFA000)}
-.rank-2{background:linear-gradient(135deg,#C0C0C0,#9E9E9E)}
-.rank-3{background:linear-gradient(135deg,#CD7F32,#795548)}
-.rank-other{background:var(--primary-mid)}
-
+.rank-badge{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff}
+.rank-1{background:linear-gradient(135deg,#FFD700,#FFA000)}.rank-2{background:linear-gradient(135deg,#C0C0C0,#9E9E9E)}.rank-3{background:linear-gradient(135deg,#CD7F32,#795548)}.rank-other{background:var(--primary-mid)}
 .status-pill{padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;display:inline-block}
-.status-pill.present{background:#e8f5e9;color:#1b5e20}
-.status-pill.absent{background:#fce4ec;color:#880e4f}
+.status-pill.present{background:#e8f5e9;color:#1b5e20}.status-pill.absent{background:#fce4ec;color:#880e4f}
 .status-pill.not-reported{background:#fff3e0;color:#e65100}
-.status-pill.active-p{background:#e8f5e9;color:#1b5e20}
-.status-pill.inactive-p{background:#fce4ec;color:#880e4f}
-
 .form-group{margin-bottom:14px}
-.form-group label{display:block;font-size:12px;font-weight:600;color:var(--muted);
-  text-transform:uppercase;letter-spacing:0.5px;margin-bottom:5px}
-.form-group input,.form-group select{width:100%;padding:10px 12px;border:1.5px solid var(--border);
-  border-radius:9px;font-size:14px;font-family:'Noto Sans',sans-serif;transition:all .2s}
-.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary-mid);
-  box-shadow:0 0 0 3px rgba(27,79,155,0.08)}
-
-.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:10px;
-  font-size:13.5px;font-weight:600;cursor:pointer;border:none;transition:all .2s;
-  font-family:'Noto Sans',sans-serif}
-.btn-primary{background:linear-gradient(135deg,var(--primary-mid),var(--primary-light));color:#fff;
-  box-shadow:0 4px 12px rgba(27,79,155,0.3)}
-.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(27,79,155,0.4)}
-.btn-success{background:linear-gradient(135deg,var(--success),#2ecc71);color:#fff}
-.btn-success:hover{transform:translateY(-1px)}
-.btn-danger{background:linear-gradient(135deg,var(--danger),#c0392b);color:#fff}
+.form-group label{display:block;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:5px}
+.form-group input,.form-group select{width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:9px;font-size:14px;font-family:'Noto Sans',sans-serif;transition:all .2s}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary-mid);box-shadow:0 0 0 3px rgba(27,79,155,0.08)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:10px;font-size:13.5px;font-weight:600;cursor:pointer;border:none;transition:all .2s;font-family:'Noto Sans',sans-serif}
+.btn-primary{background:linear-gradient(135deg,var(--primary-mid),var(--primary-light));color:#fff;box-shadow:0 4px 12px rgba(27,79,155,0.3)}
+.btn-primary:hover{transform:translateY(-1px)}.btn-success{background:linear-gradient(135deg,var(--success),#2ecc71);color:#fff}
+.btn-success:hover{transform:translateY(-1px)}.btn-danger{background:linear-gradient(135deg,var(--danger),#c0392b);color:#fff}
 .btn-warning{background:linear-gradient(135deg,var(--warning),#e67e22);color:#fff}
-.btn-wa{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;
-  box-shadow:0 4px 12px rgba(37,211,102,0.3)}
-.btn-wa:hover{transform:translateY(-1px)}
-.btn-outline{background:transparent;border:2px solid var(--primary-mid);color:var(--primary-mid)}
+.btn-wa{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff}
+.btn-wa:hover{transform:translateY(-1px)}.btn-outline{background:transparent;border:2px solid var(--primary-mid);color:var(--primary-mid)}
 .btn-outline:hover{background:var(--primary-mid);color:#fff}
-.btn-sm{padding:7px 14px;font-size:12.5px;border-radius:8px}
-.btn-icon{padding:8px;border-radius:8px}
+.btn-sm{padding:7px 14px;font-size:12.5px;border-radius:8px}.btn-icon{padding:8px;border-radius:8px}
 .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
-
-.tab-bar{display:flex;gap:4px;background:var(--bg);padding:4px;border-radius:12px;
-  margin-bottom:20px;flex-wrap:wrap}
-.tab-btn{padding:8px 18px;border-radius:9px;border:none;background:transparent;
-  font-family:'Noto Sans',sans-serif;font-size:13.5px;font-weight:500;cursor:pointer;
-  transition:all .2s;color:var(--muted)}
-.tab-btn.active{background:var(--card);color:var(--primary);font-weight:700;
-  box-shadow:0 2px 8px rgba(0,0,0,0.1)}
-
-.section-page{display:none}
-.section-page.active{display:block}
-
+.tab-bar{display:flex;gap:4px;background:var(--bg);padding:4px;border-radius:12px;margin-bottom:20px;flex-wrap:wrap}
+.tab-btn{padding:8px 18px;border-radius:9px;border:none;background:transparent;font-family:'Noto Sans',sans-serif;font-size:13.5px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--muted)}
+.tab-btn.active{background:var(--card);color:var(--primary);font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.section-page{display:none}.section-page.active{display:block}
 .date-picker-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
-.date-picker-row input[type=date]{padding:9px 12px;border:1.5px solid var(--border);
-  border-radius:9px;font-size:13.5px;font-family:'Noto Sans',sans-serif}
-.date-picker-row input[type=date]:focus{outline:none;border-color:var(--primary-mid)}
-
+.date-picker-row input[type=date]{padding:9px 12px;border:1.5px solid var(--border);border-radius:9px;font-size:13.5px;font-family:'Noto Sans',sans-serif}
 .eff-card{background:var(--card);border-radius:14px;padding:18px;box-shadow:var(--shadow);margin-bottom:16px}
 .eff-user-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.eff-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary-mid),var(--primary-light));
-  color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;
-  font-size:17px;font-weight:700;flex-shrink:0}
+.eff-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--primary-mid),var(--primary-light));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;flex-shrink:0}
 .eff-user-info h4{font-size:15px;font-weight:700;color:var(--text)}
 .eff-user-info p{font-size:12px;color:var(--muted)}
 .eff-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.eff-bar-label{font-size:12px;color:var(--muted);width:180px;flex-shrink:0;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.eff-bar-label{font-size:12px;color:var(--muted);width:180px;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .eff-bar-track{flex:1;height:8px;background:var(--bg);border-radius:4px;overflow:hidden}
 .eff-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--primary-mid),var(--accent));transition:width .4s ease}
 .eff-score-badge{font-weight:700;font-size:13px;color:var(--primary-mid);min-width:36px;text-align:right}
-.suggestion-box{background:#e3f2fd;border-left:4px solid var(--primary-mid);
-  border-radius:0 8px 8px 0;padding:10px 14px;font-size:12.5px;color:#1565c0;margin-top:10px;line-height:1.6}
-
+.suggestion-box{background:#e3f2fd;border-left:4px solid var(--primary-mid);border-radius:0 8px 8px 0;padding:10px 14px;font-size:12.5px;color:#1565c0;margin-top:10px;line-height:1.6}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 @media(max-width:600px){.grid-2,.grid-3{grid-template-columns:1fr}}
-
-.holiday-chip{display:inline-flex;align-items:center;gap:6px;background:#fff3e0;
-  border:1px solid #ffe082;color:#e65100;padding:5px 12px;border-radius:20px;
-  font-size:12.5px;margin:4px;font-weight:500}
+.holiday-chip{display:inline-flex;align-items:center;gap:6px;background:#fff3e0;border:1px solid #ffe082;color:#e65100;padding:5px 12px;border-radius:20px;font-size:12.5px;margin:4px;font-weight:500}
 .holiday-chip button{background:none;border:none;cursor:pointer;color:#c62828;font-size:14px;line-height:1;padding:0}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
 .fade-in{animation:fadeUp .4s ease}
-
-#toast{position:fixed;bottom:24px;right:24px;background:#1a2332;color:#fff;padding:12px 22px;
-  border-radius:12px;font-size:14px;z-index:2000;transition:all .3s ease;transform:translateX(120%);
-  box-shadow:0 8px 30px rgba(0,0,0,0.3)}
+#toast{position:fixed;bottom:24px;right:24px;background:#1a2332;color:#fff;padding:12px 22px;border-radius:12px;font-size:14px;z-index:2000;transition:all .3s ease;transform:translateX(120%);box-shadow:0 8px 30px rgba(0,0,0,0.3)}
 #toast.show{transform:translateX(0)}
-
-.spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--primary-mid);
-  border-radius:50%;animation:spin .8s linear infinite;margin:20px auto}
+.spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--primary-mid);border-radius:50%;animation:spin .8s linear infinite;margin:20px auto}
 @keyframes spin{to{transform:rotate(360deg)}}
-
-.loading-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.85);
-  z-index:900;display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px}
+.loading-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.85);z-index:900;display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px}
 .loading-overlay.active{display:flex}
 .loading-overlay p{color:var(--primary);font-weight:600}
-
 .hamburger{display:none;background:none;border:none;font-size:24px;cursor:pointer;padding:4px}
-@media(max-width:768px){
-  .sidebar{transform:translateX(-100%);transition:transform .3s ease}
-  .sidebar.open{transform:translateX(0)}
-  .main{margin-left:0}
-  .hamburger{display:block}
-  .content{padding:16px}
-  .topbar{padding:14px 16px}
-}
-
+@media(max-width:768px){.sidebar{transform:translateX(-100%);transition:transform .3s ease}.sidebar.open{transform:translateX(0)}.main{margin-left:0}.hamburger{display:block}.content{padding:16px}.topbar{padding:14px 16px}}
 #exportCanvas{display:none}
-
-.wa-modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.55);
-  z-index:1100;display:none;align-items:center;justify-content:center;padding:20px}
+/* WA Modal */
+.wa-modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.55);z-index:1100;display:none;align-items:center;justify-content:center;padding:20px}
 .wa-modal-overlay.active{display:flex}
-.wa-modal{background:#fff;border-radius:20px;padding:0;max-width:480px;width:100%;
-  box-shadow:0 24px 80px rgba(0,0,0,0.3);overflow:hidden;max-height:90vh;display:flex;flex-direction:column}
-.wa-modal-header{background:linear-gradient(135deg,#25D366,#128C7E);padding:18px 22px;
-  display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.wa-modal-header h3{color:#fff;font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;
-  display:flex;align-items:center;gap:8px}
-.wa-modal-close{background:rgba(255,255,255,0.2);border:none;color:#fff;width:30px;height:30px;
-  border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center}
+.wa-modal{background:#fff;border-radius:20px;padding:0;max-width:480px;width:100%;box-shadow:0 24px 80px rgba(0,0,0,0.3);overflow:hidden;max-height:90vh;display:flex;flex-direction:column}
+.wa-modal-header{background:linear-gradient(135deg,#25D366,#128C7E);padding:18px 22px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.wa-modal-header h3{color:#fff;font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700}
+.wa-modal-close{background:rgba(255,255,255,0.2);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px}
 .wa-modal-body{padding:20px;overflow-y:auto;flex:1}
-.wa-preview{background:#e5ddd5;border-radius:12px;padding:14px;font-family:'Courier New',monospace;
-  font-size:13px;line-height:1.7;white-space:pre-wrap;color:#111;max-height:420px;overflow-y:auto;
-  border:1px solid #ccc}
-.wa-bubble{background:#fff;border-radius:0 12px 12px 12px;padding:12px 14px;display:inline-block;
-  max-width:100%;box-shadow:0 1px 3px rgba(0,0,0,0.15)}
+.wa-preview{background:#e5ddd5;border-radius:12px;padding:14px;white-space:pre-wrap;font-size:13px;line-height:1.7;max-height:380px;overflow-y:auto}
+.wa-bubble{background:#fff;border-radius:0 12px 12px 12px;padding:12px 14px;display:inline-block;max-width:100%;box-shadow:0 1px 3px rgba(0,0,0,0.15)}
 .wa-modal-footer{padding:14px 20px;border-top:1px solid var(--border);display:flex;gap:10px;flex-shrink:0}
-
-/* ═══ PARAM MANAGEMENT STYLES ═══ */
-.param-mgmt-card{
-  background:#fff;border-radius:14px;box-shadow:var(--shadow);
-  border:1px solid var(--border);margin-bottom:12px;overflow:hidden;
-  transition:box-shadow .2s;
-}
+/* Param management */
+.param-mgmt-card{background:#fff;border-radius:14px;box-shadow:var(--shadow);border:1px solid var(--border);margin-bottom:12px;overflow:hidden;transition:box-shadow .2s}
 .param-mgmt-card:hover{box-shadow:0 6px 28px rgba(15,45,94,0.16)}
-.param-mgmt-card.inactive-param{opacity:0.65;background:#fafafa}
-
-.param-header{
-  display:flex;align-items:center;gap:12px;padding:14px 16px;
-  cursor:pointer;user-select:none;
-}
-.param-drag-handle{
-  color:var(--muted);font-size:18px;cursor:grab;padding:4px;
-  flex-shrink:0;
-}
-.param-drag-handle:active{cursor:grabbing}
-.param-order-badge{
-  width:28px;height:28px;border-radius:8px;
-  background:linear-gradient(135deg,var(--primary-mid),var(--primary-light));
-  color:#fff;display:flex;align-items:center;justify-content:center;
-  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:13px;flex-shrink:0;
-}
+.param-mgmt-card.inactive-param{opacity:0.6;background:#fafafa}
+.param-header{display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;user-select:none}
+.param-order-badge{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--primary-mid),var(--primary-light));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:13px;flex-shrink:0}
 .param-info-main{flex:1;min-width:0}
 .param-info-main .p-name{font-weight:600;font-size:14px;color:var(--text)}
-.param-info-main .p-meta{
-  font-size:11.5px;color:var(--muted);margin-top:2px;
-  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
-}
-.p-channel-tag{
-  padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;
-  background:#e3f2fd;color:#1565c0;
-}
-.p-channel-tag.wb{background:#e8f5e9;color:#1b5e20}
-.p-channel-tag.other{background:#fff3e0;color:#e65100}
-.p-channel-tag.tf{background:#f3e5f5;color:#6a1b9a}
-.p-wt-tag{
-  padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;
-  background:var(--accent);color:var(--primary-dark);
-}
+.param-info-main .p-meta{font-size:11.5px;color:var(--muted);margin-top:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.p-channel-tag{padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;background:#e3f2fd;color:#1565c0}
+.p-channel-tag.wb{background:#e8f5e9;color:#1b5e20}.p-channel-tag.other{background:#fff3e0;color:#e65100}.p-channel-tag.tf{background:#f3e5f5;color:#6a1b9a}
+.p-wt-tag{padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;background:var(--accent);color:var(--primary)}
 .p-wt-tag.wt1{background:#e8eaf6;color:#283593}
 .param-actions{display:flex;gap:6px;align-items:center;flex-shrink:0}
-
-.param-edit-panel{
-  border-top:1px solid var(--border);padding:16px;
-  background:#f7f9fc;display:none;
-}
+.param-edit-panel{border-top:1px solid var(--border);padding:16px;background:#f7f9fc;display:none}
 .param-edit-panel.open{display:block;animation:fadeUp .2s ease}
-
-.param-id-chip{
-  background:var(--bg);border:1px solid var(--border);
-  color:var(--muted);font-family:'Courier New',monospace;
-  font-size:11px;padding:2px 8px;border-radius:6px;
-}
-
-.add-param-form{
-  background:linear-gradient(135deg,#e8f0fe,#f0f3f8);
-  border:2px dashed var(--primary-mid);border-radius:14px;
-  padding:20px;margin-bottom:16px;display:none;
-}
+.param-id-chip{background:var(--bg);border:1px solid var(--border);color:var(--muted);font-family:'Courier New',monospace;font-size:11px;padding:2px 8px;border-radius:6px}
+.add-param-form{background:linear-gradient(135deg,#e8f0fe,#f0f3f8);border:2px dashed var(--primary-mid);border-radius:14px;padding:20px;margin-bottom:16px;display:none}
 .add-param-form.open{display:block;animation:fadeUp .25s ease}
-.add-param-form h4{
-  font-family:'Rajdhani',sans-serif;font-size:16px;color:var(--primary);
-  font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px;
-}
-
-.param-warning-banner{
-  background:linear-gradient(135deg,#fff8e1,#fff3e0);
-  border:1px solid #ffcc02;border-radius:12px;padding:14px 16px;
-  margin-bottom:16px;font-size:13px;color:#e65100;line-height:1.6;
-}
-.param-warning-banner strong{color:#c62828}
-
-.channel-select-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.channel-opt{
-  padding:7px 14px;border-radius:20px;border:2px solid var(--border);
-  background:#fff;cursor:pointer;font-size:13px;font-weight:500;
-  transition:all .15s;user-select:none;
-}
-.channel-opt.selected{border-color:var(--primary-mid);background:var(--primary-mid);color:#fff}
-.channel-opt:hover:not(.selected){border-color:var(--primary-mid);color:var(--primary-mid)}
-
-.wt-select-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.wt-opt{
-  width:40px;height:40px;border-radius:10px;border:2px solid var(--border);
-  background:#fff;cursor:pointer;font-size:15px;font-weight:700;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .15s;user-select:none;
-}
-.wt-opt.selected{border-color:var(--accent);background:var(--accent);color:var(--primary)}
-.wt-opt:hover:not(.selected){border-color:var(--accent);color:var(--accent)}
-
-.param-stats-bar{
-  display:flex;gap:16px;padding:12px 16px;
-  background:linear-gradient(135deg,var(--primary),var(--primary-mid));
-  border-radius:12px;margin-bottom:16px;flex-wrap:wrap;
-}
+.param-stats-bar{display:flex;gap:16px;padding:12px 16px;background:linear-gradient(135deg,var(--primary),var(--primary-mid));border-radius:12px;margin-bottom:16px;flex-wrap:wrap}
 .param-stat{text-align:center;flex:1;min-width:80px}
 .param-stat .psv{font-family:'Rajdhani',sans-serif;font-size:24px;font-weight:700;color:#fff}
 .param-stat .psl{font-size:11px;color:rgba(255,255,255,0.7)}
-
+.channel-select-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.channel-opt{padding:7px 14px;border-radius:20px;border:2px solid var(--border);background:#fff;cursor:pointer;font-size:13px;font-weight:500;transition:all .15s;user-select:none}
+.channel-opt.selected{border-color:var(--primary-mid);background:var(--primary-mid);color:#fff}
+.wt-select-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.wt-opt{width:40px;height:40px;border-radius:10px;border:2px solid var(--border);background:#fff;cursor:pointer;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:all .15s;user-select:none}
+.wt-opt.selected{border-color:var(--accent);background:var(--accent);color:var(--primary)}
+.param-warning-banner{background:linear-gradient(135deg,#fff8e1,#fff3e0);border:1px solid #ffcc02;border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:#e65100;line-height:1.6}
 th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
+/* Migration banner */
+.migration-banner{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border:1px solid #a5d6a7;border-radius:12px;padding:16px;margin-bottom:20px;font-size:13px;color:#1b5e20;line-height:1.8}
+.migration-banner strong{display:block;font-size:15px;margin-bottom:6px}
+.migration-banner code{background:#fff;padding:2px 7px;border-radius:5px;font-family:'Courier New',monospace;font-size:12px;color:#0d47a1}
 </style>
 </head>
 <body>
-
-<div class="loading-overlay" id="loadingOverlay">
-  <div class="spinner"></div>
-  <p id="loadingText">Loading…</p>
-</div>
+<div class="loading-overlay" id="loadingOverlay"><div class="spinner"></div><p id="loadingText">Loading…</p></div>
 <div id="toast"></div>
 <canvas id="exportCanvas"></canvas>
 
-<!-- WHATSAPP MODAL -->
+<!-- WA MODAL -->
 <div class="wa-modal-overlay" id="waModal">
   <div class="wa-modal">
-    <div class="wa-modal-header">
-      <h3>💬 WhatsApp Report Preview</h3>
-      <button class="wa-modal-close" onclick="closeWaModal()">✕</button>
-    </div>
+    <div class="wa-modal-header"><h3>💬 WhatsApp Report</h3><button class="wa-modal-close" onclick="closeWaModal()">✕</button></div>
     <div class="wa-modal-body">
-      <p style="font-size:12px;color:var(--muted);margin-bottom:10px">Preview of the WhatsApp-formatted report:</p>
       <div class="wa-preview"><div class="wa-bubble" id="waPreviewText"></div></div>
     </div>
     <div class="wa-modal-footer">
-      <button class="btn btn-wa btn-sm" onclick="copyWaMessage()">📋 Copy Message</button>
+      <button class="btn btn-wa btn-sm" onclick="copyWaMessage()">📋 Copy</button>
       <button class="btn btn-outline btn-sm" onclick="closeWaModal()">Close</button>
     </div>
   </div>
@@ -356,7 +204,7 @@ th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
     <div class="nav-item" onclick="goSection('users')"><span class="ni-icon">🔑</span> User Mgmt</div>
     <div class="nav-item" onclick="goSection('params')"><span class="ni-icon">⚙️</span> Parameters</div>
   </div>
-  <div class="sidebar-footer">Malappuram Region <br>Admin v2.0</div>
+  <div class="sidebar-footer">Malappuram Region · Admin v2.1</div>
 </nav>
 
 <!-- MAIN -->
@@ -367,8 +215,8 @@ th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
       <h1 id="topbarTitle">Dashboard</h1>
     </div>
     <div class="topbar-right">
-      <div class="badge-live" id="connBadge" onclick="testConnection()" title="Click to test connection">● Live</div>
-      <button class="btn btn-warning btn-sm" onclick="setupSheets()" title="Initialize Google Sheets">⚙️ Setup Sheets</button>
+      <div class="badge-live" id="connBadge" onclick="testConnection()">● Live</div>
+      <button class="btn btn-warning btn-sm" onclick="setupSheets()">⚙️ Setup Sheets</button>
       <button class="btn btn-outline btn-sm" onclick="refreshAll()">🔄 Refresh</button>
     </div>
   </div>
@@ -385,8 +233,7 @@ th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
       </div>
       <div class="card">
         <div class="card-title"><div class="ct-left"><span class="ct-icon">📊</span> Today's Overview</div>
-          <button class="btn btn-outline btn-sm" onclick="loadDashboard()">🔄</button>
-        </div>
+          <button class="btn btn-outline btn-sm" onclick="loadDashboard()">🔄</button></div>
         <div id="dashOverviewTable"></div>
       </div>
     </div>
@@ -397,13 +244,13 @@ th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
         <div class="card-title">
           <div class="ct-left"><span class="ct-icon">✅</span> Attendance Report</div>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <button class="btn btn-success btn-sm" onclick="downloadAttPng()">📸 PNG</button>
+            <button class="btn btn-success btn-sm" onclick="downloadAttPng()">📸 PNG (Full Team)</button>
             <button class="btn btn-primary btn-sm" onclick="loadAttendance()">🔄</button>
           </div>
         </div>
         <div class="date-picker-row">
-          <input type="date" id="attDate" value="" onchange="loadAttendance()">
-          <span style="font-size:13px;color:var(--muted)">Select date to view</span>
+          <input type="date" id="attDate" onchange="loadAttendance()">
+          <span style="font-size:13px;color:var(--muted)">Shows all 22 members including unreported</span>
         </div>
         <div id="attTableWrap"></div>
       </div>
@@ -425,7 +272,7 @@ th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
           <button class="tab-btn" onclick="switchReportTab('monthly',this)">Monthly</button>
         </div>
         <div class="date-picker-row" id="reportDateRow">
-          <input type="date" id="repDate" value="" onchange="loadReports()">
+          <input type="date" id="repDate" onchange="loadReports()">
         </div>
         <div class="date-picker-row" id="reportMonthRow" style="display:none">
           <input type="month" id="repMonth" onchange="loadReports()">
@@ -464,21 +311,13 @@ th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
       <div class="card">
         <div class="card-title"><div class="ct-left"><span class="ct-icon">🎯</span> Monthly Budget</div></div>
         <div class="btn-row">
-          <button class="btn btn-outline btn-sm" onclick="downloadBudgetTemplate()">⬇ Download Template</button>
-          <label class="btn btn-primary btn-sm" style="cursor:pointer">
-            📂 Upload CSV
-            <input type="file" accept=".csv" style="display:none" onchange="uploadBudgetCSV(this)">
-          </label>
-          <button class="btn btn-warning btn-sm" onclick="loadBudgetAdmin()">🔄 Refresh</button>
+          <button class="btn btn-outline btn-sm" onclick="downloadBudgetTemplate()">⬇ Template</button>
+          <label class="btn btn-primary btn-sm" style="cursor:pointer">📂 Upload CSV<input type="file" accept=".csv" style="display:none" onchange="uploadBudgetCSV(this)"></label>
+          <button class="btn btn-warning btn-sm" onclick="loadBudgetAdmin()">🔄</button>
         </div>
-        <div class="form-group">
-          <label>Month</label>
-          <input type="month" id="budgetMonth" style="width:auto" onchange="loadBudgetAdmin()">
-        </div>
-        <div id="budgetTableWrap"><p style="color:var(--muted);font-size:13px;text-align:center;padding:20px">Select a month to view/edit budget</p></div>
-        <div id="budgetFormWrap" style="display:none">
-          <button class="btn btn-success btn-sm" onclick="saveBudget()" style="margin-top:14px">💾 Save Budget</button>
-        </div>
+        <div class="form-group"><label>Month</label><input type="month" id="budgetMonth" style="width:auto" onchange="loadBudgetAdmin()"></div>
+        <div id="budgetTableWrap"><p style="color:var(--muted);font-size:13px;text-align:center;padding:20px">Select a month to view/edit</p></div>
+        <div id="budgetFormWrap" style="display:none"><button class="btn btn-success btn-sm" onclick="saveBudget()" style="margin-top:14px">💾 Save Budget</button></div>
       </div>
     </div>
 
@@ -495,36 +334,22 @@ th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
           <div>
             <div class="card" style="background:#fff3e0;box-shadow:none;border:1px solid #ffe082;padding:14px">
               <p style="font-size:13px;color:#e65100;font-weight:600;margin-bottom:8px">📌 Auto Rules</p>
-              <p style="font-size:12px;color:#bf360c;line-height:1.7">
-                • 2nd &amp; 4th Saturdays are auto-holidays<br>
-                • Sundays are non-working days<br>
-                • Daily ask rate adjusts for remaining working days
-              </p>
+              <p style="font-size:12px;color:#bf360c;line-height:1.7">• 2nd &amp; 4th Saturdays<br>• Sundays non-working<br>• Daily ask rate auto-adjusts</p>
             </div>
           </div>
         </div>
-        <p style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:10px">Custom Holidays:</p>
+        <p style="font-size:13px;font-weight:600;margin-bottom:10px">Custom Holidays:</p>
         <div id="holidayList"></div>
-        <div style="margin-top:16px">
-          <p style="font-size:12px;color:var(--muted)">
-            Working days this month: <strong id="workingDaysCount">—</strong> |
-            Remaining: <strong id="remainingDaysCount">—</strong>
-          </p>
-        </div>
+        <div style="margin-top:16px"><p style="font-size:12px;color:var(--muted)">Working days this month: <strong id="workingDaysCount">—</strong> | Remaining: <strong id="remainingDaysCount">—</strong></p></div>
       </div>
     </div>
 
     <!-- EFFICIENCY -->
     <div class="section-page fade-in" id="sec-efficiency">
       <div class="card">
-        <div class="card-title">
-          <div class="ct-left"><span class="ct-icon">📈</span> User Efficiency Dashboard</div>
-          <button class="btn btn-primary btn-sm" onclick="loadEfficiency()">🔄</button>
-        </div>
-        <div class="form-group" style="max-width:200px">
-          <label>Month</label>
-          <input type="month" id="effMonth" onchange="loadEfficiency()">
-        </div>
+        <div class="card-title"><div class="ct-left"><span class="ct-icon">📈</span> Efficiency Dashboard</div>
+          <button class="btn btn-primary btn-sm" onclick="loadEfficiency()">🔄</button></div>
+        <div class="form-group" style="max-width:200px"><label>Month</label><input type="month" id="effMonth" onchange="loadEfficiency()"></div>
         <div id="efficiencyWrap"></div>
       </div>
     </div>
@@ -533,55 +358,50 @@ th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
     <div class="section-page fade-in" id="sec-users">
       <div class="card">
         <div class="card-title"><div class="ct-left"><span class="ct-icon">🔑</span> User Management</div>
-          <button class="btn btn-outline btn-sm" onclick="loadUsers()">🔄</button>
-        </div>
+          <button class="btn btn-outline btn-sm" onclick="loadUsers()">🔄</button></div>
         <div id="usersTableWrap"></div>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════
-         PARAMETERS MANAGEMENT (NEW)
-    ═══════════════════════════════════ -->
+    <!-- PARAMETERS -->
     <div class="section-page fade-in" id="sec-params">
       <div class="card">
         <div class="card-title">
           <div class="ct-left"><span class="ct-icon">⚙️</span> Parameter Management</div>
           <div style="display:flex;gap:8px">
             <button class="btn btn-primary btn-sm" onclick="toggleAddParamForm()">➕ Add Parameter</button>
-            <button class="btn btn-outline btn-sm" onclick="loadParams()">🔄 Refresh</button>
+            <button class="btn btn-outline btn-sm" onclick="loadParams()">🔄</button>
           </div>
         </div>
 
-        <!-- Live stats bar -->
-        <div class="param-stats-bar" id="paramStatsBar">
-          <div class="param-stat"><div class="psv" id="pStatTotal">—</div><div class="psl">Total Params</div></div>
+        <div class="migration-banner">
+          <strong>🔄 First time setup?</strong>
+          If you're upgrading from the old version, run these two functions from the Apps Script editor <strong>once</strong>:<br>
+          <code>migrateReportsSheet()</code> → converts old service report data &nbsp;|&nbsp;
+          <code>migrateBudgetSheet()</code> → converts old budget data &nbsp;|&nbsp;
+          <code>setupSheets()</code> → creates SS_Params (skips existing sheets)<br>
+          Both migration functions create an automatic backup before touching any data.
+        </div>
+
+        <div class="param-stats-bar">
+          <div class="param-stat"><div class="psv" id="pStatTotal">—</div><div class="psl">Total</div></div>
           <div class="param-stat"><div class="psv" id="pStatActive">—</div><div class="psl">Active</div></div>
           <div class="param-stat"><div class="psv" id="pStatInactive">—</div><div class="psl">Inactive</div></div>
           <div class="param-stat"><div class="psv" id="pStatChannels">—</div><div class="psl">Channels</div></div>
         </div>
 
-        <!-- Warning -->
         <div class="param-warning-banner">
-          ⚠️ <strong>Important:</strong> Changes to parameters take effect immediately for all users.
-          Deleting a parameter marks it <em>inactive</em> — historical report data is preserved.
-          Adding/editing parameters will update the report form, WhatsApp message, budget table, and all admin views automatically.
+          ⚠️ Changes take effect immediately for all users. Deleting marks inactive (historical data preserved). New params appear in report form, WA message, budget & exports automatically.
         </div>
 
-        <!-- Add Parameter Form -->
+        <!-- Add form -->
         <div class="add-param-form" id="addParamForm">
-          <h4>➕ Add New Parameter</h4>
+          <h4 style="font-family:'Rajdhani',sans-serif;font-size:16px;color:var(--primary);font-weight:700;margin-bottom:14px">➕ New Parameter</h4>
           <div class="grid-2">
-            <div class="form-group">
-              <label>Parameter Name <span style="color:var(--danger)">*</span></label>
-              <input type="text" id="newParamName" placeholder="e.g., Internet Banking Reg" maxlength="80">
-            </div>
-            <div class="form-group">
-              <label>Short Label (max 14 chars)</label>
-              <input type="text" id="newParamShort" placeholder="e.g., IB Reg" maxlength="14">
-            </div>
+            <div class="form-group"><label>Name *</label><input type="text" id="newParamName" placeholder="e.g., Internet Banking Reg" maxlength="80"></div>
+            <div class="form-group"><label>Short Label (max 14 chars)</label><input type="text" id="newParamShort" placeholder="e.g., IB Reg" maxlength="14"></div>
           </div>
-          <div class="form-group">
-            <label>Channel</label>
+          <div class="form-group"><label>Channel</label>
             <div class="channel-select-row" id="newParamChannelRow">
               <span class="channel-opt selected" data-val="yono" onclick="selectChannel(this,'newParamChannelRow')">📱 YONO</span>
               <span class="channel-opt" data-val="wb" onclick="selectChannel(this,'newParamChannelRow')">💬 WhatsApp</span>
@@ -589,8 +409,7 @@ th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
               <span class="channel-opt" data-val="other" onclick="selectChannel(this,'newParamChannelRow')">🏦 Other</span>
             </div>
           </div>
-          <div class="form-group">
-            <label>Weight</label>
+          <div class="form-group"><label>Weight</label>
             <div class="wt-select-row" id="newParamWtRow">
               <span class="wt-opt" data-val="1" onclick="selectWt(this,'newParamWtRow')">1</span>
               <span class="wt-opt selected" data-val="2" onclick="selectWt(this,'newParamWtRow')">2</span>
@@ -598,24 +417,16 @@ th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
               <span class="wt-opt" data-val="4" onclick="selectWt(this,'newParamWtRow')">4</span>
               <span class="wt-opt" data-val="5" onclick="selectWt(this,'newParamWtRow')">5</span>
             </div>
-            <p style="font-size:11px;color:var(--muted);margin-top:6px">
-              Higher weight = more impact on score. wt:2 for high-priority params (YONO Reg, WA Reg), wt:1 for others.
-            </p>
+            <p style="font-size:11px;color:var(--muted);margin-top:6px">wt:2 for high-priority params, wt:1 for standard</p>
           </div>
-          <div style="display:flex;gap:10px;margin-top:4px">
-            <button class="btn btn-success btn-sm" onclick="saveNewParam()">✅ Save Parameter</button>
+          <div style="display:flex;gap:10px">
+            <button class="btn btn-success btn-sm" onclick="saveNewParam()">✅ Save</button>
             <button class="btn btn-outline btn-sm" onclick="toggleAddParamForm()">Cancel</button>
           </div>
         </div>
 
-        <!-- Parameter List -->
-        <div id="paramList">
-          <div style="text-align:center;padding:30px"><div class="spinner"></div></div>
-        </div>
-
-        <p style="font-size:11.5px;color:var(--muted);margin-top:12px;padding:0 4px">
-          💡 Click any parameter card to expand &amp; edit · Toggle Active/Inactive to hide without deleting · Changes are live immediately
-        </p>
+        <div id="paramList"><div class="spinner"></div></div>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:12px">💡 Click any parameter card to expand and edit</p>
       </div>
     </div>
 
@@ -623,10 +434,8 @@ th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
 </div><!-- /main -->
 
 <!-- RESET PASSWORD MODAL -->
-<div id="resetPwdModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;
-  background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;padding:20px">
-  <div style="background:#fff;border-radius:16px;padding:24px;max-width:380px;width:100%;
-    box-shadow:0 20px 60px rgba(0,0,0,0.25)">
+<div id="resetPwdModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:1000;align-items:center;justify-content:center;padding:20px">
+  <div style="background:#fff;border-radius:16px;padding:24px;max-width:380px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.25)">
     <h3 style="font-family:'Rajdhani',sans-serif;font-size:18px;color:var(--primary);margin-bottom:12px">Reset Password</h3>
     <p id="resetPwdUser" style="font-size:13px;color:var(--muted);margin-bottom:14px"></p>
     <div class="form-group"><label>New Password</label><input type="text" id="resetPwdInput" value="Sbi@1234"></div>
@@ -640,23 +449,20 @@ th[title]{cursor:help;border-bottom:2px dotted rgba(255,255,255,0.5)}
 <script>
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz9bbo53Qg7wf9oJh73yEBHlLCpV1AvXHzLwTenEh-4S1Y5dupB29_tOZJsmQCnIiTr/exec';
 
-// ── Runtime param store (loaded from backend) ──
 let PARAMS = [];
 let PARAM_MAP = {};
-
-// WA categories — rebuilt dynamically from PARAMS
 let WA_CATEGORIES = [];
+
+const CHANNEL_META = {
+  yono:  {icon:'📱', label:'YONO Channel Services'},
+  wb:    {icon:'💬', label:'WhatsApp Banking Services'},
+  tf:    {icon:'📞', label:'Toll Free Services'},
+  other: {icon:'🏦', label:'Other Digital Services'}
+};
 
 function rebuildParamMeta() {
   PARAM_MAP = {};
   PARAMS.forEach(p => { PARAM_MAP[p.id] = p; });
-  // Auto-generate WA categories by channel
-  const channelGroups = {
-    yono:  {icon:'📱', name:'YONO Channel Services'},
-    wb:    {icon:'💬', name:'WhatsApp Banking Services'},
-    tf:    {icon:'📞', name:'Toll Free Services'},
-    other: {icon:'🏦', name:'Other Digital Services'},
-  };
   const grouped = {};
   PARAMS.forEach(p => {
     const ch = p.channel || 'other';
@@ -664,55 +470,39 @@ function rebuildParamMeta() {
     grouped[ch].push(p.id);
   });
   WA_CATEGORIES = Object.entries(grouped).map(([ch, ids]) => ({
-    icon: (channelGroups[ch] || channelGroups.other).icon,
-    name: (channelGroups[ch] || channelGroups.other).name,
+    icon:   (CHANNEL_META[ch]||CHANNEL_META.other).icon,
+    name:   (CHANNEL_META[ch]||CHANNEL_META.other).label,
     params: ids
   }));
 }
 
-// Load params from backend (called on init and after any param change)
 async function fetchAndStoreParams() {
   const res = await apiCall('admin_getParams');
   if (res.success && res.params) {
-    PARAMS = res.params;
+    PARAMS = res.params.filter(p => p.active);
     rebuildParamMeta();
   }
 }
 
-let currentSection = 'dash';
-let resetPwdEmpCode = '';
-let reportMode = 'daily';
-let currentWaMessage = '';
+let currentSection='dash', resetPwdEmpCode='', reportMode='daily', currentWaMessage='';
+let allParamsAdmin=[], holidayList=[];
 
-// ── UTILITIES ──
-function showLoading(msg='Loading…'){
-  document.getElementById('loadingText').textContent=msg;
-  document.getElementById('loadingOverlay').classList.add('active');
-}
+function showLoading(msg='Loading…'){document.getElementById('loadingText').textContent=msg;document.getElementById('loadingOverlay').classList.add('active')}
 function hideLoading(){document.getElementById('loadingOverlay').classList.remove('active')}
-
-function showToast(msg,dur=3000){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),dur);
-}
+function showToast(msg,dur=3000){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),dur)}
 
 async function apiCall(action,data={}){
-  if(SCRIPT_URL.includes('YOUR_SCRIPT_ID')) return{success:false,error:'Script URL not configured.'};
   try{
-    const params=new URLSearchParams({action, payload:JSON.stringify(data)});
+    const params=new URLSearchParams({action,payload:JSON.stringify(data)});
     const url=`${SCRIPT_URL}?${params.toString()}&_t=${Date.now()}`;
     const res=await fetch(url,{redirect:'follow'});
     if(!res.ok) throw new Error(`HTTP ${res.status}`);
     const text=await res.text();
-    if(!text||!text.trim()) throw new Error('Empty response from server');
+    if(!text||!text.trim()) throw new Error('Empty response');
     const start=text.indexOf('{')!==-1?text.indexOf('{'):text.indexOf('[');
-    if(start===-1) throw new Error('No JSON in response: '+text.substring(0,120));
+    if(start===-1) throw new Error('No JSON: '+text.substring(0,100));
     return JSON.parse(text.substring(start));
-  }catch(e){
-    console.error('apiCall['+action+']',e.message);
-    return{success:false,error:e.message};
-  }
+  }catch(e){console.error('apiCall['+action+']',e.message);return{success:false,error:e.message}}
 }
 
 function goSection(id){
@@ -721,318 +511,64 @@ function goSection(id){
   document.querySelectorAll('.section-page').forEach(s=>s.classList.remove('active'));
   document.getElementById('sec-'+id).classList.add('active');
   currentSection=id;
-  const titles={dash:'Dashboard',attendance:'Attendance Report',reports:'Service Reports',
-    master:'Master Data',budget:'Budget Management',holidays:'Holiday Management',
-    efficiency:'User Efficiency',users:'User Management',params:'Parameter Management'};
+  const titles={dash:'Dashboard',attendance:'Attendance Report',reports:'Service Reports',master:'Master Data',budget:'Budget Management',holidays:'Holiday Management',efficiency:'User Efficiency',users:'User Management',params:'Parameter Management'};
   document.getElementById('topbarTitle').textContent=titles[id]||id;
   if(id==='dash')loadDashboard();
   else if(id==='attendance')loadAttendance();
   else if(id==='reports')loadReports();
   else if(id==='master')loadMasterData();
-  else if(id==='budget'){const m=new Date();document.getElementById('budgetMonth').value=m.toISOString().substring(0,7);loadBudgetAdmin();}
+  else if(id==='budget'){document.getElementById('budgetMonth').value=new Date().toISOString().substring(0,7);loadBudgetAdmin();}
   else if(id==='holidays')loadHolidays();
-  else if(id==='efficiency'){const m=new Date();document.getElementById('effMonth').value=m.toISOString().substring(0,7);loadEfficiency();}
+  else if(id==='efficiency'){document.getElementById('effMonth').value=new Date().toISOString().substring(0,7);loadEfficiency();}
   else if(id==='users')loadUsers();
   else if(id==='params')loadParams();
 }
 
 function refreshAll(){if(currentSection==='dash')loadDashboard();else goSection(currentSection)}
 
-// ── INIT ──
 (async function init(){
   const today=new Date().toISOString().split('T')[0];
   document.getElementById('attDate').value=today;
   document.getElementById('repDate').value=today;
-  const m=new Date().toISOString().substring(0,7);
-  document.getElementById('budgetMonth').value=m;
-  document.getElementById('effMonth').value=m;
+  document.getElementById('budgetMonth').value=new Date().toISOString().substring(0,7);
+  document.getElementById('effMonth').value=new Date().toISOString().substring(0,7);
   testConnection();
   await fetchAndStoreParams();
   loadDashboard();
   setInterval(()=>{if(currentSection==='dash')loadDashboard()},120000);
 })();
 
-// ══════════════════════════════════════════
-// PARAMETER MANAGEMENT SECTION (NEW)
-// ══════════════════════════════════════════
-
-let allParamsAdmin = []; // full list including inactive
-
-async function loadParams() {
-  showLoading('Loading parameters…');
-  const res = await apiCall('admin_getParams');
-  hideLoading();
-  if (!res.success) { showToast('❌ '+res.error); return; }
-  allParamsAdmin = res.params || [];
-  renderParamList();
-  updateParamStats();
-}
-
-function updateParamStats() {
-  const total    = allParamsAdmin.length;
-  const active   = allParamsAdmin.filter(p=>p.active).length;
-  const inactive = total - active;
-  const channels = new Set(allParamsAdmin.map(p=>p.channel)).size;
-  document.getElementById('pStatTotal').textContent    = total;
-  document.getElementById('pStatActive').textContent   = active;
-  document.getElementById('pStatInactive').textContent = inactive;
-  document.getElementById('pStatChannels').textContent = channels;
-}
-
-function renderParamList() {
-  const wrap = document.getElementById('paramList');
-  if (!allParamsAdmin.length) {
-    wrap.innerHTML = '<p style="text-align:center;color:var(--muted);padding:20px">No parameters found. Add one above.</p>';
-    return;
-  }
-
-  const channelLabels = {yono:'YONO',wb:'WhatsApp',tf:'Toll Free',other:'Other'};
-  const channelColors = {yono:'yono',wb:'wb',tf:'tf',other:'other'};
-
-  wrap.innerHTML = allParamsAdmin.map((p, idx) => {
-    const isActive = p.active;
-    const wtClass  = p.wt >= 2 ? '' : 'wt1';
-    return `
-    <div class="param-mgmt-card ${!isActive?'inactive-param':''}" id="pcard-${p.id}">
-      <div class="param-header" onclick="toggleParamEdit('${p.id}')">
-        <span class="param-drag-handle" title="Drag to reorder">⠿</span>
-        <div class="param-order-badge">${idx+1}</div>
-        <div class="param-info-main">
-          <div class="p-name">${escHtml(p.name)}
-            ${!isActive ? '<span style="font-size:11px;color:var(--danger);margin-left:6px">[INACTIVE]</span>' : ''}
-          </div>
-          <div class="p-meta">
-            <span class="param-id-chip">${p.id}</span>
-            <span class="p-channel-tag ${channelColors[p.channel]||'other'}">${channelLabels[p.channel]||p.channel}</span>
-            <span class="p-wt-tag ${wtClass}">wt:${p.wt}</span>
-            ${p.short ? `<span style="font-size:11px;color:var(--muted)">"${escHtml(p.short)}"</span>` : ''}
-          </div>
-        </div>
-        <div class="param-actions" onclick="event.stopPropagation()">
-          <button class="btn btn-sm ${isActive?'btn-warning':'btn-success'}"
-            onclick="toggleParamActive('${p.id}',${!isActive})"
-            title="${isActive?'Deactivate':'Activate'}">
-            ${isActive?'⏸ Disable':'▶ Enable'}
-          </button>
-          <button class="btn btn-danger btn-sm btn-icon"
-            onclick="confirmDeleteParam('${p.id}','${escHtml(p.name).replace(/'/g,"\\'")}')">🗑</button>
-          <span style="color:var(--muted);font-size:14px">›</span>
-        </div>
-      </div>
-      <!-- Edit Panel -->
-      <div class="param-edit-panel" id="pedit-${p.id}">
-        <div class="grid-3">
-          <div class="form-group">
-            <label>Parameter Name</label>
-            <input type="text" id="pname-${p.id}" value="${escHtml(p.name)}" maxlength="80">
-          </div>
-          <div class="form-group">
-            <label>Short Label (max 14)</label>
-            <input type="text" id="pshort-${p.id}" value="${escHtml(p.short||'')}" maxlength="14">
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Channel</label>
-          <div class="channel-select-row" id="pchan-${p.id}">
-            <span class="channel-opt ${p.channel==='yono'?'selected':''}" data-val="yono" onclick="selectChannel(this,'pchan-${p.id}')">📱 YONO</span>
-            <span class="channel-opt ${p.channel==='wb'?'selected':''}" data-val="wb" onclick="selectChannel(this,'pchan-${p.id}')">💬 WhatsApp</span>
-            <span class="channel-opt ${p.channel==='tf'?'selected':''}" data-val="tf" onclick="selectChannel(this,'pchan-${p.id}')">📞 Toll Free</span>
-            <span class="channel-opt ${p.channel==='other'?'selected':''}" data-val="other" onclick="selectChannel(this,'pchan-${p.id}')">🏦 Other</span>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Weight</label>
-          <div class="wt-select-row" id="pwt-${p.id}">
-            ${[1,2,3,4,5].map(n=>`<span class="wt-opt ${p.wt===n?'selected':''}" data-val="${n}" onclick="selectWt(this,'pwt-${p.id}')">${n}</span>`).join('')}
-          </div>
-        </div>
-        <div style="display:flex;gap:10px;margin-top:8px">
-          <button class="btn btn-primary btn-sm" onclick="saveParamEdit('${p.id}')">💾 Save Changes</button>
-          <button class="btn btn-outline btn-sm" onclick="toggleParamEdit('${p.id}')">Cancel</button>
-        </div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function escHtml(s) {
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-function toggleParamEdit(id) {
-  const panel = document.getElementById('pedit-'+id);
-  if (!panel) return;
-  const isOpen = panel.classList.contains('open');
-  // Close all panels
-  document.querySelectorAll('.param-edit-panel').forEach(p => p.classList.remove('open'));
-  if (!isOpen) panel.classList.add('open');
-}
-
-function selectChannel(el, rowId) {
-  document.querySelectorAll('#'+rowId+' .channel-opt').forEach(o=>o.classList.remove('selected'));
-  el.classList.add('selected');
-}
-
-function selectWt(el, rowId) {
-  document.querySelectorAll('#'+rowId+' .wt-opt').forEach(o=>o.classList.remove('selected'));
-  el.classList.add('selected');
-}
-
-function getSelectedChannel(rowId) {
-  const sel = document.querySelector('#'+rowId+' .channel-opt.selected');
-  return sel ? sel.getAttribute('data-val') : 'other';
-}
-
-function getSelectedWt(rowId) {
-  const sel = document.querySelector('#'+rowId+' .wt-opt.selected');
-  return sel ? parseInt(sel.getAttribute('data-val')) : 1;
-}
-
-function toggleAddParamForm() {
-  const form = document.getElementById('addParamForm');
-  const isOpen = form.classList.contains('open');
-  form.classList.toggle('open', !isOpen);
-  if (!isOpen) {
-    document.getElementById('newParamName').focus();
-    // Reset selections
-    selectChannelByVal('newParamChannelRow', 'yono');
-    selectWtByVal('newParamWtRow', 1);
-  }
-}
-
-function selectChannelByVal(rowId, val) {
-  document.querySelectorAll('#'+rowId+' .channel-opt').forEach(o => {
-    o.classList.toggle('selected', o.getAttribute('data-val') === val);
-  });
-}
-
-function selectWtByVal(rowId, val) {
-  document.querySelectorAll('#'+rowId+' .wt-opt').forEach(o => {
-    o.classList.toggle('selected', parseInt(o.getAttribute('data-val')) === val);
-  });
-}
-
-async function saveNewParam() {
-  const name    = document.getElementById('newParamName').value.trim();
-  const short   = document.getElementById('newParamShort').value.trim();
-  const channel = getSelectedChannel('newParamChannelRow');
-  const wt      = getSelectedWt('newParamWtRow');
-  if (!name) { showToast('⚠️ Parameter name is required'); return; }
-
-  showLoading('Adding parameter…');
-  const res = await apiCall('admin_addParam', {name, short: short||name.substring(0,14), channel, wt});
-  hideLoading();
-  if (res.success) {
-    showToast('✅ Parameter added! ID: ' + res.id);
-    document.getElementById('addParamForm').classList.remove('open');
-    document.getElementById('newParamName').value = '';
-    document.getElementById('newParamShort').value = '';
-    await loadParams();
-    await fetchAndStoreParams(); // Refresh runtime params
-  } else {
-    showToast('❌ ' + res.error);
-  }
-}
-
-async function saveParamEdit(id) {
-  const name    = document.getElementById('pname-' +id)?.value.trim();
-  const short   = document.getElementById('pshort-'+id)?.value.trim();
-  const channel = getSelectedChannel('pchan-'+id);
-  const wt      = getSelectedWt('pwt-'+id);
-  if (!name) { showToast('⚠️ Name is required'); return; }
-
-  showLoading('Saving…');
-  const res = await apiCall('admin_updateParam', {id, name, short: short||name.substring(0,14), channel, wt});
-  hideLoading();
-  if (res.success) {
-    showToast('✅ Parameter updated!');
-    await loadParams();
-    await fetchAndStoreParams();
-  } else {
-    showToast('❌ ' + res.error);
-  }
-}
-
-async function toggleParamActive(id, newActive) {
-  showLoading((newActive?'Enabling':'Disabling')+' parameter…');
-  const res = await apiCall('admin_updateParam', {id, active: newActive});
-  hideLoading();
-  if (res.success) {
-    showToast(newActive ? '✅ Parameter enabled' : '⏸ Parameter disabled');
-    await loadParams();
-    await fetchAndStoreParams();
-  } else {
-    showToast('❌ ' + res.error);
-  }
-}
-
-async function confirmDeleteParam(id, name) {
-  if (!confirm(`Delete parameter "${name}"?\n\nThis will mark it INACTIVE so historical data is preserved. Use "Disable" to temporarily hide it instead.\n\nProceed?`)) return;
-  showLoading('Deleting parameter…');
-  const res = await apiCall('admin_deleteParam', {id});
-  hideLoading();
-  if (res.success) {
-    showToast('🗑 Parameter deleted (marked inactive)');
-    await loadParams();
-    await fetchAndStoreParams();
-  } else {
-    showToast('❌ ' + res.error);
-  }
-}
-
 // ── DASHBOARD ──
 async function loadDashboard(){
   showLoading('Loading dashboard…');
   const today=new Date().toISOString().split('T')[0];
-  const [attRes,repRes]=await Promise.all([
-    apiCall('admin_getAttendance',{date:today}),
-    apiCall('admin_getReports',{date:today,mode:'daily'})
-  ]);
+  const [attRes,repRes]=await Promise.all([apiCall('admin_getAttendance',{date:today}),apiCall('admin_getReports',{date:today,mode:'daily'})]);
   hideLoading();
-  const attData=attRes.data||[];
-  const repData=repRes.data||[];
-  const present=attData.filter(r=>r.status==='Present').length;
-  const absent=attData.filter(r=>r.status==='Absent').length;
-  document.getElementById('statPresent').textContent=present;
-  document.getElementById('statAbsent').textContent=absent;
+  const attData=attRes.data||[],repData=repRes.data||[];
+  document.getElementById('statPresent').textContent=attData.filter(r=>r.status==='Present').length;
+  document.getElementById('statAbsent').textContent=attData.filter(r=>r.status==='Absent').length;
   document.getElementById('statNotReported').textContent=Math.max(0,22-attData.length);
   document.getElementById('statSubmitted').textContent=repData.length;
-  renderDashTable(attData,repData);
-}
-
-function renderDashTable(attData,repData){
-  const reportMap={};
-  repData.forEach(r=>reportMap[r.empCode]=r);
-  const rows=attData.map(a=>{
-    const r=reportMap[a.empCode]||null;
-    return `<tr>
-      <td>${a.name}</td><td>${a.branch}</td>
-      <td><span class="status-pill ${a.status.toLowerCase()}">${a.status}</span></td>
-      <td>${r?'<span class="status-pill present">Submitted ('+r.score+')</span>':'<span class="status-pill not-reported">Pending</span>'}</td>
-    </tr>`;
-  }).join('');
-  document.getElementById('dashOverviewTable').innerHTML=`
-    <div class="table-wrap"><table>
-      <thead><tr><th>Name</th><th>Branch</th><th>Attendance</th><th>Report</th></tr></thead>
-      <tbody>${rows||'<tr><td colspan="4" style="text-align:center;color:var(--muted);padding:20px">No data yet</td></tr>'}</tbody>
-    </table></div>`;
+  const reportMap={};repData.forEach(r=>reportMap[r.empCode]=r);
+  const rows=attData.map(a=>`<tr><td>${a.name}</td><td>${a.branch}</td>
+    <td><span class="status-pill ${a.status.toLowerCase()}">${a.status}</span></td>
+    <td>${reportMap[a.empCode]?'<span class="status-pill present">Submitted ('+reportMap[a.empCode].score+')</span>':'<span class="status-pill not-reported">Pending</span>'}</td>
+  </tr>`).join('');
+  document.getElementById('dashOverviewTable').innerHTML=`<div class="table-wrap"><table>
+    <thead><tr><th>Name</th><th>Branch</th><th>Attendance</th><th>Report</th></tr></thead>
+    <tbody>${rows||'<tr><td colspan="4" style="text-align:center;color:var(--muted);padding:20px">No data yet</td></tr>'}</tbody>
+  </table></div>`;
 }
 
 // ── ATTENDANCE ──
 async function loadAttendance(){
-  const date=document.getElementById('attDate').value;
-  if(!date)return;
+  const date=document.getElementById('attDate').value;if(!date)return;
   showLoading('Loading attendance…');
-  const [res,masterRes]=await Promise.all([
-    apiCall('admin_getAttendance',{date}),
-    apiCall('admin_getMasterData')
-  ]);
+  const [res,masterRes]=await Promise.all([apiCall('admin_getAttendance',{date}),apiCall('admin_getMasterData')]);
   hideLoading();
-  const attData=res.data||[];
-  const masterData=masterRes.data||[];
+  const attData=res.data||[],masterData=masterRes.data||[];
   const reportedCodes=new Set(attData.map(r=>r.empCode));
-  const notReported=masterData
-    .filter(m=>!reportedCodes.has(m.empCode))
+  const notReported=masterData.filter(m=>!reportedCodes.has(m.empCode))
     .map(m=>({name:m.name,branch:m.branch,empCode:m.empCode,status:'Not Reported',timestamp:'—'}));
   const ORDER={Present:0,Absent:1,'Not Reported':2};
   const data=[...attData,...notReported].sort((a,b)=>(ORDER[a.status]??2)-(ORDER[b.status]??2));
@@ -1041,19 +577,144 @@ async function loadAttendance(){
     <td><span class="status-pill ${r.status==='Not Reported'?'not-reported':r.status.toLowerCase()}">${r.status}</span></td>
     <td style="font-size:12px;color:var(--muted)">${r.timestamp||'—'}</td>
   </tr>`).join('');
-  document.getElementById('attTableWrap').innerHTML=
-    data.length?`<div class="table-wrap" id="attTable"><table>
+  document.getElementById('attTableWrap').innerHTML=data.length?
+    `<div class="table-wrap" id="attTable"><table>
       <thead><tr><th>Name</th><th>Branch</th><th>Status</th><th>Time</th></tr></thead>
       <tbody>${rows}</tbody>
-    </table></div>`:'<p style="text-align:center;color:var(--muted);padding:20px">No data for this date</p>';
+    </table></div><p style="font-size:12px;color:var(--muted);margin-top:8px">Total: ${data.length} members · Present: ${attData.filter(r=>r.status==='Present').length} · Absent: ${attData.filter(r=>r.status==='Absent').length} · Not Reported: ${notReported.length}</p>`
+    :'<p style="text-align:center;color:var(--muted);padding:20px">No data for this date</p>';
 }
 
+// ── ATTENDANCE PNG — Full team including Not Reported ──
 async function downloadAttPng(){
   const date=document.getElementById('attDate').value;
-  const res=await apiCall('admin_getAttendance',{date});
-  const data=res.data||[];
-  generatePng('Attendance Report – '+date,data,
-    ['Name','Branch','Status'],['name','branch','status']);
+  if(!date){showToast('⚠️ Select a date first');return}
+  showLoading('Building full-team attendance PNG…');
+  const [attRes,masterRes]=await Promise.all([
+    apiCall('admin_getAttendance',{date}),
+    apiCall('admin_getMasterData')
+  ]);
+  hideLoading();
+  const attData=attRes.data||[], masterData=masterRes.data||[];
+  const reportedCodes=new Set(attData.map(r=>r.empCode));
+  const notReported=masterData.filter(m=>!reportedCodes.has(m.empCode))
+    .map(m=>({name:m.name,branch:m.branch,status:'Not Reported',timestamp:'—'}));
+  const ORDER={Present:0,Absent:1,'Not Reported':2};
+  const allMembers=[...attData,...notReported].sort((a,b)=>(ORDER[a.status]??2)-(ORDER[b.status]??2));
+
+  const present=allMembers.filter(r=>r.status==='Present').length;
+  const absent=allMembers.filter(r=>r.status==='Absent').length;
+  const nr=allMembers.filter(r=>r.status==='Not Reported').length;
+
+  generateAttendancePng(date, allMembers, present, absent, nr);
+}
+
+function generateAttendancePng(date, members, present, absent, nr){
+  const canvas = document.getElementById('exportCanvas');
+  const ctx = canvas.getContext('2d');
+  const W = 800;
+  const ROW_H = 38;
+  const HEADER_H = 130;
+  const SUMMARY_H = 60;
+  const COL_W = [36, 240, 240, 120, 130]; // #, Name, Branch, Status, Time
+  const COL_X = [0];
+  COL_W.forEach((w,i)=>{ if(i<COL_W.length-1) COL_X.push(COL_X[i]+w); });
+  const TABLE_H = (members.length + 1) * ROW_H;
+  const FOOTER_H = 40;
+  const H = HEADER_H + SUMMARY_H + TABLE_H + FOOTER_H + 20;
+  canvas.width = W; canvas.height = H;
+
+  // Background
+  ctx.fillStyle = '#f0f3f8'; ctx.fillRect(0, 0, W, H);
+
+  // Header gradient
+  const grad = ctx.createLinearGradient(0,0,W,0);
+  grad.addColorStop(0,'#0f2d5e'); grad.addColorStop(1,'#1B4F9B');
+  ctx.fillStyle = grad; ctx.fillRect(0, 0, W, HEADER_H);
+
+  // Logo box
+  ctx.fillStyle = '#F5A623'; ctx.beginPath(); ctx.roundRect(20, 18, 56, 56, 10); ctx.fill();
+  ctx.fillStyle = '#0f2d5e'; ctx.font = 'bold 20px sans-serif'; ctx.textAlign = 'center';
+  ctx.fillText('SS', 48, 56); ctx.textAlign = 'left';
+
+  // Title
+  ctx.fillStyle = '#F5A623'; ctx.font = 'bold 22px sans-serif';
+  ctx.fillText('SEVA SARATHI – MALAPPURAM', 90, 42);
+  ctx.fillStyle = '#fff'; ctx.font = 'bold 16px sans-serif';
+  ctx.fillText('Attendance Report', 90, 66);
+  ctx.fillStyle = 'rgba(255,255,255,0.75)'; ctx.font = '13px sans-serif';
+  ctx.fillText('Date: ' + date, 90, 88);
+  ctx.fillText('Generated: ' + new Date().toLocaleString('en-IN'), 90, 106);
+
+  // Summary pills
+  const pills = [
+    {label:'PRESENT', val:present, bg:'#27AE60', x:20},
+    {label:'ABSENT',  val:absent,  bg:'#E74C3C', x:160},
+    {label:'NOT REPORTED', val:nr, bg:'#F39C12', x:300},
+    {label:'TOTAL',   val:members.length, bg:'#1B4F9B', x:490}
+  ];
+  pills.forEach(p => {
+    ctx.fillStyle = p.bg; ctx.beginPath(); ctx.roundRect(p.x, HEADER_H + 12, 130, 36, 8); ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.font = 'bold 18px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText(String(p.val), p.x + 65, HEADER_H + 36);
+    ctx.font = '9px sans-serif';
+    ctx.fillText(p.label, p.x + 65, HEADER_H + 50);
+    ctx.textAlign = 'left';
+  });
+
+  let y = HEADER_H + SUMMARY_H;
+
+  // Table header
+  ctx.fillStyle = '#1B4F9B'; ctx.fillRect(0, y, W, ROW_H);
+  const hdrs = ['#','Name','Branch','Status','Time'];
+  hdrs.forEach((h,i) => {
+    ctx.fillStyle = '#fff'; ctx.font = 'bold 13px sans-serif';
+    ctx.fillText(h, COL_X[i] + 8, y + 24);
+  });
+  y += ROW_H;
+
+  // Rows
+  members.forEach((r, ri) => {
+    const isPresent = r.status === 'Present';
+    const isAbsent  = r.status === 'Absent';
+    // Row bg
+    ctx.fillStyle = ri % 2 === 0 ? '#ffffff' : '#f7f9fc';
+    ctx.fillRect(0, y, W, ROW_H);
+    // Status left accent
+    const accentColor = isPresent ? '#27AE60' : isAbsent ? '#E74C3C' : '#F39C12';
+    ctx.fillStyle = accentColor; ctx.fillRect(0, y, 4, ROW_H);
+
+    ctx.fillStyle = '#1a2332'; ctx.font = '12px sans-serif';
+    ctx.fillText(String(ri+1), COL_X[0]+8, y+24);
+    ctx.fillText((r.name||'').substring(0,28), COL_X[1]+8, y+24);
+    ctx.fillText((r.branch||'').substring(0,28), COL_X[2]+8, y+24);
+    // Status badge
+    ctx.fillStyle = isPresent ? '#e8f5e9' : isAbsent ? '#fce4ec' : '#fff3e0';
+    ctx.beginPath(); ctx.roundRect(COL_X[3]+6, y+8, 100, 22, 11); ctx.fill();
+    ctx.fillStyle = isPresent ? '#1b5e20' : isAbsent ? '#880e4f' : '#e65100';
+    ctx.font = 'bold 11px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText(r.status, COL_X[3]+56, y+23); ctx.textAlign = 'left';
+    // Time
+    ctx.fillStyle = '#6b7a90'; ctx.font = '11px sans-serif';
+    const ts = String(r.timestamp||'—');
+    ctx.fillText(ts.length > 8 ? ts.substring(11,19) : ts, COL_X[4]+8, y+24);
+
+    // Row divider
+    ctx.fillStyle = '#dde3ec'; ctx.fillRect(0, y+ROW_H-1, W, 1);
+    y += ROW_H;
+  });
+
+  // Footer
+  ctx.fillStyle = '#e8eef8'; ctx.fillRect(0, y, W, FOOTER_H);
+  ctx.fillStyle = '#6b7a90'; ctx.font = '11px sans-serif';
+  ctx.fillText('Seva Sarathi Malappuram Region  |  Confidential', 16, y + 24);
+
+  // Download
+  const a = document.createElement('a');
+  a.href = canvas.toDataURL('image/png');
+  a.download = `Attendance_${date}_FullTeam.png`;
+  a.click();
+  showToast('✅ Attendance PNG downloaded (' + members.length + ' members)');
 }
 
 // ── REPORTS ──
@@ -1075,11 +736,7 @@ async function loadReports(){
   const res=await apiCall('admin_getReports',{date,month,mode});
   hideLoading();
   const data=(res.data||[]).sort((a,b)=>b.score-a.score);
-  if(!data.length){
-    document.getElementById('reportTableWrap').innerHTML='<p style="text-align:center;color:var(--muted);padding:20px">No reports found</p>';
-    return;
-  }
-
+  if(!data.length){document.getElementById('reportTableWrap').innerHTML='<p style="text-align:center;color:var(--muted);padding:20px">No reports found</p>';return}
   const headerCols=PARAMS.map(p=>`<th style="font-size:12px;text-align:center;min-width:68px" title="${p.name}">${p.short||p.name.substring(0,12)}</th>`).join('');
   const rows=data.map((r,i)=>{
     const rankClass=i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'rank-other';
@@ -1092,461 +749,463 @@ async function loadReports(){
       <td><button class="btn btn-wa btn-sm" onclick='showWaMessage(${JSON.stringify({name:r.name,branch:r.branch,score:r.score,date:date||month,values:r.values||{}})})'>💬</button></td>
     </tr>`;
   }).join('');
-
   document.getElementById('reportTableWrap').innerHTML=`
-    <div class="table-wrap" id="repTable" style="overflow-x:auto"><table>
-      <thead><tr>
-        <th>#</th><th>Name</th><th>Branch</th><th>Score</th>
-        ${headerCols}<th>WA</th>
-      </tr></thead>
+    <div class="table-wrap" style="overflow-x:auto"><table>
+      <thead><tr><th>#</th><th>Name</th><th>Branch</th><th>Score</th>${headerCols}<th>WA</th></tr></thead>
       <tbody>${rows}</tbody>
     </table></div>
-    <p style="font-size:11px;color:var(--muted);margin-top:8px;padding-left:4px">
-      💡 Hover column headers to see full parameter names
-    </p>`;
+    <p style="font-size:11px;color:var(--muted);margin-top:8px">💡 Hover column headers for full param name</p>`;
 }
 
-// ── WA MESSAGE (dynamic params) ──
-function buildWaMessage(r){
-  const dateStr = r.date ? r.date.split('-').reverse().join('.') : '—';
-  const doneCount = PARAMS.filter(p=>(r.values?.[p.id]||0)>0).length;
-  const totalParams = PARAMS.length;
-
-  let msg = `🙏 *SEVA SARATHI REPORT*\n`;
-  msg += `━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
-  msg += `📝 Reported by: ${r.name}\n`;
-  msg += `Branch: ${r.branch}\n`;
-  msg += `📅 Date: ${dateStr}\n`;
-  msg += `🏆 YS: ${doneCount}/${totalParams}\n`;
-
-  WA_CATEGORIES.forEach(cat => {
-    const lines = [];
-    cat.params.forEach(pid => {
-      const val = r.values?.[pid] || 0;
-      if(val > 0 && PARAM_MAP[pid]){
-        lines.push(`   • ${PARAM_MAP[pid].name}: ${val}`);
-      }
-    });
-    if(lines.length > 0){
-      msg += `\n${cat.icon} *${cat.name}*\n${lines.join('\n')}\n`;
-    }
-  });
-
-  const missing = PARAMS.filter(p => (r.values?.[p.id]||0) === 0).map(p => p.name);
-  if(missing.length > 0){
-    msg += `\n❌ *Not done today:*\n`;
-    missing.forEach((m,i) => { msg += `${i+1}. ${m}\n`; });
-  }
-  msg += `\n━━━━━━━━━━━━━━━━━━━━━━━━`;
-  return msg;
-}
-
-function showWaMessage(reportData){
-  const msg = buildWaMessage(reportData);
-  currentWaMessage = msg;
-  document.getElementById('waPreviewText').innerText = msg;
-  document.getElementById('waModal').classList.add('active');
-}
-function closeWaModal(){ document.getElementById('waModal').classList.remove('active'); }
-async function copyWaMessage(){
-  try{await navigator.clipboard.writeText(currentWaMessage);showToast('✅ Copied!');}
-  catch(e){
-    const ta=document.createElement('textarea');ta.value=currentWaMessage;
-    document.body.appendChild(ta);ta.select();document.execCommand('copy');
-    document.body.removeChild(ta);showToast('✅ Copied!');
-  }
-}
-document.getElementById('waModal').addEventListener('click',function(e){if(e.target===this)closeWaModal();});
-
+// ── REPORT EXCEL DOWNLOAD (dynamic params) ──
 async function downloadReportExcel(){
   const mode=reportMode;
   const date=mode==='daily'?document.getElementById('repDate').value:null;
   const month=mode==='monthly'?document.getElementById('repMonth').value:null;
+  if(!date&&!month){showToast('⚠️ Select a date/month first');return}
+  showLoading('Generating Excel…');
   const res=await apiCall('admin_getReports',{date,month,mode});
+  hideLoading();
   const data=(res.data||[]).sort((a,b)=>b.score-a.score);
   if(!data.length){showToast('No data to export');return}
-  const headers=['Rank','Name','Branch','Score',...PARAMS.map(p=>p.name)];
+  const headers=['Rank','Name','Branch','Score',...PARAMS.map(p=>p.name),'Report Days'];
   const csvRows=[headers.join(',')];
   data.forEach((r,i)=>{
-    const vals=[i+1,`"${r.name}"`,`"${r.branch}"`,r.score,...PARAMS.map(p=>r.values?.[p.id]||0)];
+    const vals=[
+      i+1,
+      `"${(r.name||'').replace(/"/g,'""')}"`,
+      `"${(r.branch||'').replace(/"/g,'""')}"`,
+      r.score,
+      ...PARAMS.map(p=>r.values?.[p.id]||0),
+      r.reportDays||''
+    ];
     csvRows.push(vals.join(','));
   });
-  const blob=new Blob([csvRows.join('\n')],{type:'text/csv'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
-  a.download=`SevaReport_${date||month}.csv`;a.click();
+  // Add summary row
+  csvRows.push('');
+  csvRows.push(['TOTALS','','',data.reduce((s,r)=>s+(r.score||0),0),...PARAMS.map(p=>data.reduce((s,r)=>s+(r.values?.[p.id]||0),0)),''].join(','));
+  const blob=new Blob(['\uFEFF'+csvRows.join('\n')],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`SevaReport_${date||month}.csv`;
+  a.click();
+  showToast('✅ Excel downloaded — '+data.length+' records');
 }
 
+// ── REPORT PNG DOWNLOAD (dynamic params, proper canvas rendering) ──
 async function downloadReportPng(){
   const mode=reportMode;
   const date=mode==='daily'?document.getElementById('repDate').value:null;
   const month=mode==='monthly'?document.getElementById('repMonth').value:null;
+  if(!date&&!month){showToast('⚠️ Select a date/month first');return}
+  showLoading('Generating Report PNG…');
   const res=await apiCall('admin_getReports',{date,month,mode});
+  hideLoading();
   const data=(res.data||[]).sort((a,b)=>b.score-a.score);
-  generatePng('Service Report – '+(date||month),data,
-    ['#','Name','Branch','Score'],['_rank','name','branch','score'],true);
+  if(!data.length){showToast('No data to export');return}
+  generateReportPng(date||month, data);
 }
 
-// ── MASTER DATA ──
+function generateReportPng(label, data){
+  const canvas = document.getElementById('exportCanvas');
+  const ctx = canvas.getContext('2d');
+
+  // Dynamic column widths
+  const FIXED_COLS = [{w:32,label:'#'},{w:180,label:'Name'},{w:160,label:'Branch'},{w:60,label:'Score'}];
+  const PARAM_COL_W = Math.max(44, Math.min(64, Math.floor(560 / Math.max(PARAMS.length,1))));
+  const PARAM_COLS = PARAMS.map(p=>({w:PARAM_COL_W, label:p.short||p.name.substring(0,10), id:p.id}));
+  const ALL_COLS = [...FIXED_COLS, ...PARAM_COLS];
+  const W = ALL_COLS.reduce((s,c)=>s+c.w, 0) + 32;
+  const ROW_H = 36;
+  const HEADER_H = 110;
+  const TABLE_H = (data.length + 1) * ROW_H;
+  const H = HEADER_H + TABLE_H + 50;
+
+  canvas.width = W; canvas.height = H;
+
+  // BG
+  ctx.fillStyle = '#f0f3f8'; ctx.fillRect(0,0,W,H);
+
+  // Header
+  const grad = ctx.createLinearGradient(0,0,W,0);
+  grad.addColorStop(0,'#0f2d5e'); grad.addColorStop(1,'#1B4F9B');
+  ctx.fillStyle = grad; ctx.fillRect(0,0,W,HEADER_H);
+  ctx.fillStyle = '#F5A623'; ctx.font = 'bold 20px sans-serif';
+  ctx.fillText('SEVA SARATHI – MALAPPURAM', 16, 36);
+  ctx.fillStyle = '#fff'; ctx.font = 'bold 15px sans-serif';
+  ctx.fillText('Service Report  |  ' + label, 16, 62);
+  ctx.fillStyle = 'rgba(255,255,255,0.65)'; ctx.font = '11px sans-serif';
+  ctx.fillText('Generated: ' + new Date().toLocaleString('en-IN') + '  |  ' + data.length + ' records', 16, 82);
+  ctx.fillText('Hover table headers for full parameter names', 16, 98);
+
+  let y = HEADER_H;
+
+  // Column header row
+  ctx.fillStyle = '#1B4F9B'; ctx.fillRect(0, y, W, ROW_H);
+  let x = 16;
+  ALL_COLS.forEach(col => {
+    ctx.fillStyle = '#fff'; ctx.font = 'bold 11px sans-serif';
+    ctx.fillText(col.label.substring(0,10), x, y+23);
+    x += col.w;
+  });
+  y += ROW_H;
+
+  // Data rows
+  const RANK_COLORS = ['#FFD700','#C0C0C0','#CD7F32'];
+  data.forEach((r, ri) => {
+    ctx.fillStyle = ri%2===0 ? '#fff' : '#f7f9fc';
+    ctx.fillRect(0, y, W, ROW_H);
+    x = 16;
+    ALL_COLS.forEach((col, ci) => {
+      let val;
+      if(ci===0) val = ri+1;
+      else if(ci===1) val = (r.name||'').substring(0,22);
+      else if(ci===2) val = (r.branch||'').substring(0,20);
+      else if(ci===3) val = r.score;
+      else val = r.values?.[col.id]||0;
+
+      if(ci===0 && ri<3){
+        ctx.fillStyle=RANK_COLORS[ri];
+        ctx.beginPath();ctx.arc(x+12,y+18,11,0,Math.PI*2);ctx.fill();
+        ctx.fillStyle='#333';ctx.font='bold 11px sans-serif';ctx.textAlign='center';
+        ctx.fillText(String(val),x+12,y+22);ctx.textAlign='left';
+      } else {
+        ctx.fillStyle = ci===3 ? '#0f2d5e' : '#1a2332';
+        ctx.font = ci===3 ? 'bold 12px sans-serif' : '12px sans-serif';
+        ctx.fillText(String(val), x, y+23);
+      }
+      x += col.w;
+    });
+    ctx.fillStyle='#dde3ec'; ctx.fillRect(0,y+ROW_H-1,W,1);
+    y += ROW_H;
+  });
+
+  // Footer
+  ctx.fillStyle='#e8eef8'; ctx.fillRect(0,y,W,40);
+  ctx.fillStyle='#6b7a90'; ctx.font='11px sans-serif';
+  ctx.fillText('Seva Sarathi Malappuram Region  |  Confidential', 16, y+24);
+
+  const a=document.createElement('a');
+  a.href=canvas.toDataURL('image/png');
+  a.download=`ServiceReport_${label}.png`;
+  a.click();
+  showToast('✅ Report PNG downloaded');
+}
+
+// ── WA MESSAGE ──
+function buildWaMessage(r){
+  const dateStr=r.date?r.date.split('-').reverse().join('.'):'—';
+  const doneCount=PARAMS.filter(p=>(r.values?.[p.id]||0)>0).length;
+  let msg=`🙏 *SEVA SARATHI REPORT*\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+  msg+=`📝 Reported by: ${r.name}\nBranch: ${r.branch}\n📅 Date: ${dateStr}\n🏆 YS: ${doneCount}/${PARAMS.length}\n`;
+  WA_CATEGORIES.forEach(cat=>{
+    const lines=[];
+    cat.params.forEach(pid=>{
+      const val=r.values?.[pid]||0;
+      if(val>0&&PARAM_MAP[pid]) lines.push(`   • ${PARAM_MAP[pid].name}: ${val}`);
+    });
+    if(lines.length) msg+=`\n${cat.icon} *${cat.name}*\n${lines.join('\n')}\n`;
+  });
+  const missed=PARAMS.filter(p=>(r.values?.[p.id]||0)===0).map(p=>p.name);
+  if(missed.length){
+    msg+=`\n❌ *Not done today:*\n`;
+    missed.forEach((m,i)=>{msg+=`${i+1}. ${m}\n`;});
+  }
+  return msg+'\n━━━━━━━━━━━━━━━━━━━━━━━━';
+}
+function showWaMessage(r){currentWaMessage=buildWaMessage(r);document.getElementById('waPreviewText').innerText=currentWaMessage;document.getElementById('waModal').classList.add('active')}
+function closeWaModal(){document.getElementById('waModal').classList.remove('active')}
+async function copyWaMessage(){
+  try{await navigator.clipboard.writeText(currentWaMessage);showToast('✅ Copied!')}
+  catch(e){const ta=document.createElement('textarea');ta.value=currentWaMessage;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showToast('✅ Copied!')}
+}
+document.getElementById('waModal').addEventListener('click',function(e){if(e.target===this)closeWaModal()});
+
+// ── MASTER ──
 async function loadMasterData(){
-  showLoading('Loading master data…');
-  const res=await apiCall('admin_getMasterData');
-  hideLoading();
+  showLoading('Loading…');const res=await apiCall('admin_getMasterData');hideLoading();
   const data=res.data||[];
-  const rows=data.map((r,i)=>`<tr>
-    <td>${i+1}</td><td>${r.branch}</td><td>${r.name}</td><td>${r.empCode||'—'}</td>
-    <td><button class="btn btn-danger btn-sm btn-icon" onclick="removeBranch('${r.empCode}','${r.branch.replace(/'/g,"\\'")}')">🗑</button></td>
-  </tr>`).join('');
-  document.getElementById('masterTableWrap').innerHTML=`
-    <div class="table-wrap"><table>
-      <thead><tr><th>#</th><th>Branch</th><th>Seva Sarathi</th><th>Emp Code</th><th>Action</th></tr></thead>
-      <tbody>${rows}</tbody>
-    </table></div>`;
+  document.getElementById('masterTableWrap').innerHTML=`<div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>Branch</th><th>Seva Sarathi</th><th>Emp Code</th><th>Action</th></tr></thead>
+    <tbody>${data.map((r,i)=>`<tr><td>${i+1}</td><td>${r.branch}</td><td>${r.name}</td><td>${r.empCode||'—'}</td>
+      <td><button class="btn btn-danger btn-sm" onclick="removeBranch('${r.empCode}','${r.branch.replace(/'/g,"\\'")}')">🗑</button></td></tr>`).join('')}</tbody>
+  </table></div>`;
 }
-
-function showAddBranchForm(){
-  const f=document.getElementById('addBranchForm');
-  f.style.display=f.style.display==='none'?'block':'none';
-}
-
+function showAddBranchForm(){const f=document.getElementById('addBranchForm');f.style.display=f.style.display==='none'?'block':'none'}
 async function addBranch(){
-  const branch=document.getElementById('newBranch').value.trim();
-  const name=document.getElementById('newSSName').value.trim();
-  const empCode=document.getElementById('newEmpCode').value.trim();
+  const branch=document.getElementById('newBranch').value.trim(),name=document.getElementById('newSSName').value.trim(),empCode=document.getElementById('newEmpCode').value.trim();
   if(!branch||!name||!empCode){showToast('⚠️ Fill all fields');return}
-  showLoading('Adding…');
-  const res=await apiCall('admin_addBranch',{branch,name,empCode});
-  hideLoading();
-  if(res.success){showToast('✅ Added!');loadMasterData();document.getElementById('addBranchForm').style.display='none';}
-  else showToast('❌ '+res.error);
+  showLoading('Adding…');const res=await apiCall('admin_addBranch',{branch,name,empCode});hideLoading();
+  if(res.success){showToast('✅ Added!');loadMasterData();document.getElementById('addBranchForm').style.display='none'}else showToast('❌ '+res.error);
 }
-
 async function removeBranch(empCode,branch){
   if(!confirm(`Remove ${branch}?`))return;
-  showLoading('Removing…');
-  const res=await apiCall('admin_removeBranch',{empCode});
-  hideLoading();
-  if(res.success){showToast('✅ Removed');loadMasterData();}
-  else showToast('❌ '+res.error);
+  showLoading('Removing…');const res=await apiCall('admin_removeBranch',{empCode});hideLoading();
+  if(res.success){showToast('✅ Removed');loadMasterData()}else showToast('❌ '+res.error);
 }
 
 // ── BUDGET ──
 async function loadBudgetAdmin(){
-  const month=document.getElementById('budgetMonth').value;
-  if(!month)return;
+  const month=document.getElementById('budgetMonth').value;if(!month)return;
   showLoading('Loading budget…');
-  const [masterRes,budgetRes]=await Promise.all([
-    apiCall('admin_getMasterData'),
-    apiCall('admin_getBudgets',{month})
-  ]);
+  const [masterRes,budgetRes]=await Promise.all([apiCall('admin_getMasterData'),apiCall('admin_getBudgets',{month})]);
   hideLoading();
-  const branches=(masterRes.data||[]).map(r=>r.branch);
-  const budgets=budgetRes.data||{};
-  // Dynamic param headers
+  const branches=(masterRes.data||[]).map(r=>r.branch),budgets=budgetRes.data||{};
   const paramHeaders=PARAMS.map(p=>`<th style="font-size:11px;min-width:70px" title="${p.name}">${p.short||p.name.substring(0,12)}</th>`).join('');
   const rows=branches.map(branch=>{
     const bd=budgets[branch]||{};
     const cells=PARAMS.map(p=>`<td><input type="number" min="0" value="${bd[p.id]||0}"
-      id="bud_${branch.replace(/[\s/]/g,'_')}_${p.id}" style="width:65px;padding:4px 6px;
-      border:1px solid var(--border);border-radius:6px;font-size:12px;text-align:center"></td>`).join('');
-    return `<tr><td style="font-weight:600;font-size:13px">${branch}</td>${cells}</tr>`;
+      id="bud_${branch.replace(/[\s/]/g,'_')}_${p.id}" style="width:65px;padding:4px 6px;border:1px solid var(--border);border-radius:6px;font-size:12px;text-align:center"></td>`).join('');
+    return `<tr><td style="font-weight:600;font-size:13px;white-space:nowrap">${branch}</td>${cells}</tr>`;
   }).join('');
-  document.getElementById('budgetTableWrap').innerHTML=`
-    <div class="table-wrap" style="overflow-x:auto" id="budgetTable"><table>
-      <thead><tr><th>Branch</th>${paramHeaders}</tr></thead>
-      <tbody>${rows}</tbody>
-    </table></div>`;
+  document.getElementById('budgetTableWrap').innerHTML=`<div class="table-wrap" style="overflow-x:auto"><table>
+    <thead><tr><th>Branch</th>${paramHeaders}</tr></thead><tbody>${rows}</tbody>
+  </table></div>`;
   document.getElementById('budgetFormWrap').style.display='block';
   loadWorkingDays(month);
 }
-
 async function saveBudget(){
-  const month=document.getElementById('budgetMonth').value;
-  if(!month){showToast('⚠️ Select a month first');return}
-  const masterRes=await apiCall('admin_getMasterData');
-  const branches=(masterRes.data||[]).map(r=>r.branch);
-  if(!branches.length){showToast('⚠️ No branches found');return}
-  showLoading(`Saving budget (0/${branches.length})…`);
-  let errors=[];
+  const month=document.getElementById('budgetMonth').value;if(!month){showToast('⚠️ Select month');return}
+  const masterRes=await apiCall('admin_getMasterData');const branches=(masterRes.data||[]).map(r=>r.branch);
+  showLoading(`Saving 0/${branches.length}…`);let errors=[];
   for(let i=0;i<branches.length;i++){
-    const branch=branches[i];
-    const key=branch.replace(/[\s/]/g,'_');
-    const vals={};
-    PARAMS.forEach(p=>{
-      const inp=document.getElementById(`bud_${key}_${p.id}`);
-      vals[p.id]=parseInt(inp?.value)||0;
-    });
+    const branch=branches[i],key=branch.replace(/[\s/]/g,'_'),vals={};
+    PARAMS.forEach(p=>{const inp=document.getElementById(`bud_${key}_${p.id}`);vals[p.id]=parseInt(inp?.value)||0});
     document.getElementById('loadingText').textContent=`Saving ${i+1}/${branches.length}: ${branch}…`;
-    const res=await apiCall('admin_saveBudget1',{branch, month, vals:JSON.stringify(vals)});
-    if(!res.success) errors.push(branch+': '+(res.error||'failed'));
+    const res=await apiCall('admin_saveBudget1',{branch,month,vals:JSON.stringify(vals)});
+    if(!res.success)errors.push(branch);
   }
   hideLoading();
-  if(errors.length) showToast('⚠️ Some errors: '+errors.join('; '),5000);
+  if(errors.length)showToast('⚠️ Errors on: '+errors.join(', '),5000);
   else showToast('✅ Budget saved for all '+branches.length+' branches!');
 }
-
 async function uploadBudgetCSV(input){
   const file=input.files[0];if(!file)return;
-  const month=document.getElementById('budgetMonth').value;
-  if(!month){showToast('⚠️ Select month first');return}
-  const text=await file.text();
-  const lines=text.split('\n').filter(l=>l.trim());
-  if(lines.length<2){showToast('⚠️ CSV is empty');return}
+  const month=document.getElementById('budgetMonth').value;if(!month){showToast('⚠️ Select month first');return}
+  const text=await file.text(),lines=text.split('\n').filter(l=>l.trim());
+  if(lines.length<2){showToast('⚠️ Empty CSV');return}
   const rows=[];
   for(let i=1;i<lines.length;i++){
     const cols=lines[i].split(',').map(c=>c.trim().replace(/"/g,''));
     const branch=cols[0];if(!branch)continue;
-    const vals={};
-    PARAMS.forEach((p,pi)=>{vals[p.id]=parseInt(cols[pi+1])||0});
+    const vals={};PARAMS.forEach((p,pi)=>{vals[p.id]=parseInt(cols[pi+1])||0});
     rows.push({branch,vals});
   }
-  showLoading(`Uploading 0/${rows.length} branches…`);
-  let errors=[];
+  showLoading(`Uploading 0/${rows.length}…`);let errors=[];
   for(let i=0;i<rows.length;i++){
     const {branch,vals}=rows[i];
     document.getElementById('loadingText').textContent=`Uploading ${i+1}/${rows.length}: ${branch}…`;
-    const res=await apiCall('admin_saveBudget1',{branch, month, vals:JSON.stringify(vals)});
-    if(!res.success) errors.push(branch+': '+(res.error||'failed'));
+    const res=await apiCall('admin_saveBudget1',{branch,month,vals:JSON.stringify(vals)});
+    if(!res.success)errors.push(branch);
   }
   hideLoading();
-  if(errors.length) showToast('⚠️ Errors: '+errors.join('; '),5000);
-  else showToast(`✅ Budget uploaded for ${rows.length} branches!`);
-  loadBudgetAdmin();
-  input.value='';
+  if(errors.length)showToast('⚠️ Errors: '+errors.join(', '),5000);else showToast('✅ Uploaded!');
+  loadBudgetAdmin();input.value='';
 }
-
 function downloadBudgetTemplate(){
   const headers=['Branch',...PARAMS.map(p=>p.name)];
-  const sampleBranches=['MALAPPURAM','KOTTAKKAL','(add more branches...)'];
-  const csv=[headers.join(','),...sampleBranches.map(b=>[`"${b}"`,...PARAMS.map(()=>0)].join(','))];
+  const csv=[headers.join(','),`"SAMPLE BRANCH",${PARAMS.map(()=>0).join(',')}`];
   const blob=new Blob([csv.join('\n')],{type:'text/csv'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
-  a.download='BudgetTemplate.csv';a.click();
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='BudgetTemplate.csv';a.click();
 }
 
-// ── CONNECTION TEST ──
+// ── CONNECTION ──
 async function testConnection(){
   const badge=document.getElementById('connBadge');
-  if(SCRIPT_URL.includes('YOUR_SCRIPT_ID')){
-    badge.textContent='⚙️ URL not set';return;
-  }
   badge.textContent='🔌 Testing…';
   const res=await apiCall('ping');
-  if(res.success){
-    badge.innerHTML='● Connected';
-    badge.style.background='#e8f5e9';badge.style.color='#1b5e20';
-    showToast('✅ Server connected');
-  } else {
-    badge.innerHTML='● Disconnected';
-    badge.style.background='#fce4ec';badge.style.color='#880e4f';
-    showToast('❌ Connection failed: '+(res.error||'unknown'),5000);
-  }
+  if(res.success){badge.innerHTML='● Connected';badge.style.cssText='background:#e8f5e9;color:#1b5e20;font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;display:flex;align-items:center;gap:6px;cursor:pointer';showToast('✅ Connected')}
+  else{badge.innerHTML='● Error';badge.style.cssText='background:#fce4ec;color:#880e4f;font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;display:flex;align-items:center;gap:6px;cursor:pointer';showToast('❌ '+res.error,5000)}
 }
-
 async function setupSheets(){
-  if(!confirm('Initialize Google Sheets and seed 22 branches? Only needed once. Continue?'))return;
-  showLoading('Setting up sheets…');
-  const res=await apiCall('setupSheets');
-  hideLoading();
-  if(res.success){showToast('✅ '+res.message,6000);setTimeout(()=>refreshAll(),1000);}
-  else showToast('❌ Setup failed: '+(res.error||'unknown'),6000);
+  if(!confirm('Initialize Google Sheets? Only needed once or to add new SS_Params sheet. Continue?'))return;
+  showLoading('Setting up sheets…');const res=await apiCall('setupSheets');hideLoading();
+  if(res.success){showToast('✅ '+res.message,6000);setTimeout(()=>refreshAll(),1000)}else showToast('❌ '+res.error,6000);
 }
 
 // ── HOLIDAYS ──
-let holidayList=[];
 async function loadHolidays(){
-  const res=await apiCall('admin_getHolidays');
-  holidayList=res.data||[];
-  renderHolidays();
-  const month=new Date().toISOString().substring(0,7);
-  loadWorkingDays(month);
+  const res=await apiCall('admin_getHolidays');holidayList=res.data||[];renderHolidays();
+  loadWorkingDays(new Date().toISOString().substring(0,7));
 }
-
 function renderHolidays(){
   const wrap=document.getElementById('holidayList');
-  if(!holidayList.length){wrap.innerHTML='<p style="color:var(--muted);font-size:13px">No custom holidays added</p>';return}
-  wrap.innerHTML=holidayList.map((h,i)=>`
-    <span class="holiday-chip">📅 ${h.date} – ${h.desc}
-      <button onclick="removeHoliday(${i})">✕</button>
-    </span>`).join('');
+  wrap.innerHTML=holidayList.length?holidayList.map((h,i)=>`<span class="holiday-chip">📅 ${h.date} – ${h.desc}<button onclick="removeHoliday(${i})">✕</button></span>`).join(''):'<p style="color:var(--muted);font-size:13px">No custom holidays</p>';
 }
-
 async function addHoliday(){
-  const date=document.getElementById('newHolidayDate').value;
-  const desc=document.getElementById('newHolidayDesc').value.trim();
+  const date=document.getElementById('newHolidayDate').value,desc=document.getElementById('newHolidayDesc').value.trim();
   if(!date||!desc){showToast('⚠️ Enter date and description');return}
-  showLoading('Adding…');
-  const res=await apiCall('admin_addHoliday',{date,desc});
-  hideLoading();
-  if(res.success){showToast('✅ Holiday added!');loadHolidays();}
-  else showToast('❌ '+res.error);
+  showLoading('Adding…');const res=await apiCall('admin_addHoliday',{date,desc});hideLoading();
+  if(res.success){showToast('✅ Holiday added!');loadHolidays()}else showToast('❌ '+res.error);
 }
-
 async function removeHoliday(idx){
   const h=holidayList[idx];if(!h)return;
-  showLoading('Removing…');
-  const res=await apiCall('admin_removeHoliday',{date:h.date});
-  hideLoading();
-  if(res.success){showToast('✅ Removed');loadHolidays();}
-  else showToast('❌ '+res.error);
+  showLoading('Removing…');const res=await apiCall('admin_removeHoliday',{date:h.date});hideLoading();
+  if(res.success){showToast('✅ Removed');loadHolidays()}else showToast('❌ '+res.error);
 }
-
 function loadWorkingDays(month){
   const [y,m]=month.split('-').map(Number);
-  const daysInMonth=new Date(y,m,0).getDate();
-  const today=new Date();
+  const daysInMonth=new Date(y,m,0).getDate(),today=new Date();
   let working=0,remaining=0;
   for(let d=1;d<=daysInMonth;d++){
     const date=new Date(y,m-1,d);
-    if(isWorkingDay(date)){
-      working++;
-      if(date>=today)remaining++;
-    }
+    if(isWorkingDay(date)){working++;if(date>=today)remaining++;}
   }
   document.getElementById('workingDaysCount').textContent=working;
   document.getElementById('remainingDaysCount').textContent=remaining;
 }
-
 function isWorkingDay(date){
-  const day=date.getDay();
-  if(day===0)return false;
-  if(day===6){const week=Math.ceil(date.getDate()/7);if(week===2||week===4)return false;}
-  const ds=date.toISOString().split('T')[0];
-  if(holidayList.some(h=>h.date===ds))return false;
-  return true;
+  const day=date.getDay();if(day===0)return false;
+  if(day===6){const week=Math.ceil(date.getDate()/7);if(week===2||week===4)return false}
+  return !holidayList.some(h=>h.date===date.toISOString().split('T')[0]);
 }
 
 // ── EFFICIENCY ──
 async function loadEfficiency(){
-  const month=document.getElementById('effMonth').value;
-  if(!month)return;
-  showLoading('Loading efficiency…');
-  const res=await apiCall('admin_getEfficiency',{month});
-  hideLoading();
+  const month=document.getElementById('effMonth').value;if(!month)return;
+  showLoading('Loading efficiency…');const res=await apiCall('admin_getEfficiency',{month});hideLoading();
   const data=res.data||[];
-  if(!data.length){
-    document.getElementById('efficiencyWrap').innerHTML='<p style="text-align:center;color:var(--muted);padding:20px">No data for this month</p>';
-    return;
-  }
-  const html=data.sort((a,b)=>(b.totalScore||0)-(a.totalScore||0)).map(u=>{
-    const suggestions=generateSuggestions(u);
-    const initials=(u.name||'?').split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
+  if(!data.length){document.getElementById('efficiencyWrap').innerHTML='<p style="text-align:center;color:var(--muted);padding:20px">No data for this month</p>';return}
+  document.getElementById('efficiencyWrap').innerHTML=data.sort((a,b)=>(b.totalScore||0)-(a.totalScore||0)).map(u=>{
+    const vals=u.paramTotals||u.values||{};
+    const initials=(u.name||'').split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
+    const weak=PARAMS.filter(p=>(vals[p.id]||0)===0).map(p=>p.name);
+    const suggestion=weak.length===0?'Great performance! Keep up the momentum.':weak.length>Math.floor(PARAMS.length/2)?`Focus on high-priority params. Missing: ${weak.slice(0,3).join(', ')}...`:`Zero in: ${weak.join(', ')}.`;
     return `<div class="eff-card">
       <div class="eff-user-header">
         <div class="eff-avatar">${initials}</div>
-        <div class="eff-user-info">
-          <h4>${u.name}</h4>
-          <p>${u.branch} · Score: <strong>${u.totalScore||0}</strong> · ${u.reportDays||0} report days</p>
-        </div>
+        <div class="eff-user-info"><h4>${u.name}</h4><p>${u.branch} · Score: <strong>${u.totalScore||0}</strong> · ${u.reportDays||0} days</p></div>
       </div>
-      ${PARAMS.map(p=>{
-        const val=(u.paramTotals||u.values||{})[p.id]||0;
-        return `<div class="eff-bar-row">
-          <span class="eff-bar-label" title="${p.name}">${p.name}</span>
-          <div class="eff-bar-track"><div class="eff-bar-fill" style="width:${val>0?Math.min(100,val*5)+'%':'0'}"></div></div>
-          <span class="eff-score-badge">${val}</span>
-        </div>`;
-      }).join('')}
-      <div class="suggestion-box">💡 <strong>Suggestions:</strong> ${suggestions}</div>
+      ${PARAMS.map(p=>{const val=(vals)[p.id]||0;return `<div class="eff-bar-row">
+        <span class="eff-bar-label" title="${p.name}">${p.name}</span>
+        <div class="eff-bar-track"><div class="eff-bar-fill" style="width:${val>0?Math.min(100,val*5)+'%':'0'}"></div></div>
+        <span class="eff-score-badge">${val}</span>
+      </div>`}).join('')}
+      <div class="suggestion-box">💡 ${suggestion}</div>
     </div>`;
   }).join('');
-  document.getElementById('efficiencyWrap').innerHTML=html;
-}
-
-function generateSuggestions(u){
-  const vals = u.paramTotals || u.values || {};
-  const weak=PARAMS.filter(p=>(vals[p.id]||0)===0).map(p=>p.name);
-  if(weak.length===0)return'Great performance! Keep up the momentum.';
-  if(weak.length>Math.floor(PARAMS.length/2))return`Focus on high-priority registrations first. Currently missing: ${weak.slice(0,3).join(', ')} and ${Math.max(0,weak.length-3)} more.`;
-  return`Zero entries in: ${weak.join(', ')}. Push customers for digital adoption in these areas.`;
 }
 
 // ── USERS ──
 async function loadUsers(){
-  showLoading('Loading users…');
-  const res=await apiCall('admin_getUsers');
-  hideLoading();
-  const data=res.data||[];
-  const rows=data.map(u=>`<tr>
-    <td>${u.empCode}</td><td>${u.name}</td><td>${u.branch}</td>
-    <td><span class="status-pill ${u.firstLogin?'not-reported':'present'}">${u.firstLogin?'Default':'Changed'}</span></td>
-    <td><button class="btn btn-warning btn-sm" onclick="openResetPwd('${u.empCode}','${u.name.replace(/'/g,"\\'")}')">🔑 Reset</button></td>
-  </tr>`).join('');
-  document.getElementById('usersTableWrap').innerHTML=`
-    <div class="table-wrap"><table>
-      <thead><tr><th>Emp Code</th><th>Name</th><th>Branch</th><th>Password Status</th><th>Action</th></tr></thead>
-      <tbody>${rows}</tbody>
-    </table></div>`;
+  showLoading('Loading…');const res=await apiCall('admin_getUsers');hideLoading();
+  document.getElementById('usersTableWrap').innerHTML=`<div class="table-wrap"><table>
+    <thead><tr><th>Emp Code</th><th>Name</th><th>Branch</th><th>Password</th><th>Action</th></tr></thead>
+    <tbody>${(res.data||[]).map(u=>`<tr><td>${u.empCode}</td><td>${u.name}</td><td>${u.branch}</td>
+      <td><span class="status-pill ${u.firstLogin?'not-reported':'present'}">${u.firstLogin?'Default':'Changed'}</span></td>
+      <td><button class="btn btn-warning btn-sm" onclick="openResetPwd('${u.empCode}','${u.name.replace(/'/g,"\\'")}')">🔑 Reset</button></td></tr>`).join('')}</tbody>
+  </table></div>`;
 }
-
-function openResetPwd(empCode,name){
-  resetPwdEmpCode=empCode;
-  document.getElementById('resetPwdUser').textContent='Resetting password for: '+name;
-  document.getElementById('resetPwdInput').value='Sbi@1234';
-  document.getElementById('resetPwdModal').style.display='flex';
-}
-
+function openResetPwd(ec,name){resetPwdEmpCode=ec;document.getElementById('resetPwdUser').textContent='Resetting: '+name;document.getElementById('resetPwdInput').value='Sbi@1234';document.getElementById('resetPwdModal').style.display='flex'}
 async function confirmResetPwd(){
-  const pwd=document.getElementById('resetPwdInput').value;
-  if(!pwd){showToast('⚠️ Enter password');return}
-  showLoading('Resetting…');
-  const res=await apiCall('admin_resetPassword',{empCode:resetPwdEmpCode,newPassword:pwd});
+  const pwd=document.getElementById('resetPwdInput').value;if(!pwd){showToast('⚠️ Enter password');return}
+  showLoading('Resetting…');const res=await apiCall('admin_resetPassword',{empCode:resetPwdEmpCode,newPassword:pwd});hideLoading();
+  if(res.success){showToast('✅ Password reset!');document.getElementById('resetPwdModal').style.display='none'}else showToast('❌ '+res.error);
+}
+
+// ── PARAMETERS ──
+async function loadParams(){
+  showLoading('Loading parameters…');const res=await apiCall('admin_getParams');hideLoading();
+  if(!res.success){showToast('❌ '+res.error);return}
+  allParamsAdmin=res.params||[];renderParamList();updateParamStats();
+}
+function updateParamStats(){
+  document.getElementById('pStatTotal').textContent=allParamsAdmin.length;
+  document.getElementById('pStatActive').textContent=allParamsAdmin.filter(p=>p.active).length;
+  document.getElementById('pStatInactive').textContent=allParamsAdmin.filter(p=>!p.active).length;
+  document.getElementById('pStatChannels').textContent=new Set(allParamsAdmin.map(p=>p.channel)).size;
+}
+function escHtml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function renderParamList(){
+  const wrap=document.getElementById('paramList');
+  if(!allParamsAdmin.length){wrap.innerHTML='<p style="text-align:center;color:var(--muted);padding:20px">No parameters. Add one above.</p>';return}
+  const chanColors={yono:'yono',wb:'wb',tf:'tf',other:'other'};
+  const chanLabels={yono:'YONO',wb:'WhatsApp',tf:'Toll Free',other:'Other'};
+  wrap.innerHTML=allParamsAdmin.map((p,idx)=>`
+    <div class="param-mgmt-card ${!p.active?'inactive-param':''}" id="pcard-${p.id}">
+      <div class="param-header" onclick="toggleParamEdit('${p.id}')">
+        <div class="param-order-badge">${idx+1}</div>
+        <div class="param-info-main">
+          <div class="p-name">${escHtml(p.name)}${!p.active?' <span style="font-size:11px;color:var(--danger)">[INACTIVE]</span>':''}</div>
+          <div class="p-meta">
+            <span class="param-id-chip">${p.id}</span>
+            <span class="p-channel-tag ${chanColors[p.channel]||'other'}">${chanLabels[p.channel]||p.channel}</span>
+            <span class="p-wt-tag ${p.wt<=1?'wt1':''}">wt:${p.wt}</span>
+            ${p.short?`<span style="font-size:11px;color:var(--muted)">"${escHtml(p.short)}"</span>`:''}
+          </div>
+        </div>
+        <div class="param-actions" onclick="event.stopPropagation()">
+          <button class="btn btn-sm ${p.active?'btn-warning':'btn-success'}" onclick="toggleParamActive('${p.id}',${!p.active})">${p.active?'⏸ Disable':'▶ Enable'}</button>
+          <button class="btn btn-danger btn-sm" onclick="confirmDeleteParam('${p.id}','${escHtml(p.name).replace(/'/g,"\\'")}')">🗑</button>
+        </div>
+      </div>
+      <div class="param-edit-panel" id="pedit-${p.id}">
+        <div class="grid-2">
+          <div class="form-group"><label>Name</label><input type="text" id="pname-${p.id}" value="${escHtml(p.name)}" maxlength="80"></div>
+          <div class="form-group"><label>Short Label</label><input type="text" id="pshort-${p.id}" value="${escHtml(p.short||'')}" maxlength="14"></div>
+        </div>
+        <div class="form-group"><label>Channel</label>
+          <div class="channel-select-row" id="pchan-${p.id}">
+            ${['yono','wb','tf','other'].map(ch=>`<span class="channel-opt ${p.channel===ch?'selected':''}" data-val="${ch}" onclick="selectChannel(this,'pchan-${p.id}')">${{yono:'📱 YONO',wb:'💬 WhatsApp',tf:'📞 Toll Free',other:'🏦 Other'}[ch]}</span>`).join('')}
+          </div>
+        </div>
+        <div class="form-group"><label>Weight</label>
+          <div class="wt-select-row" id="pwt-${p.id}">
+            ${[1,2,3,4,5].map(n=>`<span class="wt-opt ${p.wt===n?'selected':''}" data-val="${n}" onclick="selectWt(this,'pwt-${p.id}')">${n}</span>`).join('')}
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:8px">
+          <button class="btn btn-primary btn-sm" onclick="saveParamEdit('${p.id}')">💾 Save</button>
+          <button class="btn btn-outline btn-sm" onclick="toggleParamEdit('${p.id}')">Cancel</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+function toggleParamEdit(id){
+  const panel=document.getElementById('pedit-'+id);if(!panel)return;
+  const isOpen=panel.classList.contains('open');
+  document.querySelectorAll('.param-edit-panel').forEach(p=>p.classList.remove('open'));
+  if(!isOpen)panel.classList.add('open');
+}
+function selectChannel(el,rowId){document.querySelectorAll('#'+rowId+' .channel-opt').forEach(o=>o.classList.remove('selected'));el.classList.add('selected')}
+function selectWt(el,rowId){document.querySelectorAll('#'+rowId+' .wt-opt').forEach(o=>o.classList.remove('selected'));el.classList.add('selected')}
+function getSelectedChannel(rowId){return document.querySelector('#'+rowId+' .channel-opt.selected')?.getAttribute('data-val')||'other'}
+function getSelectedWt(rowId){return parseInt(document.querySelector('#'+rowId+' .wt-opt.selected')?.getAttribute('data-val'))||1}
+function toggleAddParamForm(){
+  const form=document.getElementById('addParamForm');
+  form.classList.toggle('open');
+  if(form.classList.contains('open'))document.getElementById('newParamName').focus();
+}
+async function saveNewParam(){
+  const name=document.getElementById('newParamName').value.trim();
+  const short=document.getElementById('newParamShort').value.trim();
+  const channel=getSelectedChannel('newParamChannelRow');
+  const wt=getSelectedWt('newParamWtRow');
+  if(!name){showToast('⚠️ Name required');return}
+  showLoading('Adding…');
+  const res=await apiCall('admin_addParam',{name,short:short||name.substring(0,14),channel,wt});
   hideLoading();
-  if(res.success){showToast('✅ Password reset!');document.getElementById('resetPwdModal').style.display='none';}
+  if(res.success){showToast('✅ Added! ID: '+res.id);document.getElementById('addParamForm').classList.remove('open');document.getElementById('newParamName').value='';document.getElementById('newParamShort').value='';await loadParams();await fetchAndStoreParams()}
   else showToast('❌ '+res.error);
 }
-
-// ── PNG GENERATOR ──
-function generatePng(title,data,cols,keys,addParams=false){
-  if(!data.length){showToast('No data to export');return}
-  const canvas=document.getElementById('exportCanvas');
-  const rowH=36,padding=20,headerH=80,footerH=30;
-  const baseWidths=addParams?[40,180,180,80]:[200,200,120];
-  const paramWidths=addParams?PARAMS.map(()=>52):[];
-  const colWidths=[...baseWidths,...paramWidths];
-  const totalW=colWidths.reduce((a,b)=>a+b,0)+padding*2;
-  const totalH=headerH+(data.length+1)*rowH+footerH+padding*2;
-  canvas.width=totalW;canvas.height=totalH;
-  const ctx=canvas.getContext('2d');
-  ctx.fillStyle='#f0f3f8';ctx.fillRect(0,0,totalW,totalH);
-  const grad=ctx.createLinearGradient(0,0,totalW,0);
-  grad.addColorStop(0,'#0f2d5e');grad.addColorStop(1,'#1B4F9B');
-  ctx.fillStyle=grad;ctx.fillRect(0,0,totalW,headerH);
-  ctx.fillStyle='#F5A623';ctx.font='bold 22px sans-serif';
-  ctx.fillText('SEVA SARATHI – MALAPPURAM',padding,32);
-  ctx.fillStyle='rgba(255,255,255,0.8)';ctx.font='14px sans-serif';
-  ctx.fillText(title,padding,56);
-  ctx.fillStyle='rgba(255,255,255,0.5)';ctx.font='11px sans-serif';
-  ctx.fillText('Generated: '+new Date().toLocaleString('en-IN'),padding,72);
-  let y=headerH+padding;let x=padding;
-  ctx.fillStyle='#1B4F9B';ctx.fillRect(0,y,totalW,rowH);
-  ctx.fillStyle='#fff';ctx.font='bold 12px sans-serif';
-  cols.forEach((col,i)=>{ctx.fillText(col,x+4,y+23);x+=colWidths[i]||52;});
-  if(addParams) PARAMS.forEach((p,i)=>{ctx.fillText((p.short||p.name).substring(0,10),x+2,y+23);x+=52;});
-  y+=rowH;
-  data.forEach((row,ri)=>{
-    ctx.fillStyle=ri%2===0?'#fff':'#f7f9fc';ctx.fillRect(0,y,totalW,rowH);
-    x=padding;
-    keys.forEach((k,ki)=>{
-      ctx.fillStyle='#1a2332';
-      ctx.font=(k==='score'||k==='_rank')?'bold 12px sans-serif':'12px sans-serif';
-      let val=k==='_rank'?ri+1:(row[k]||0);
-      ctx.fillText(String(val),x+4,y+23);
-      x+=colWidths[ki]||52;
-    });
-    if(addParams){
-      PARAMS.forEach(p=>{
-        ctx.fillStyle='#1a2332';ctx.font='12px sans-serif';
-        ctx.fillText(String(row.values?.[p.id]||0),x+4,y+23);
-        x+=52;
-      });
-    }
-    y+=rowH;
-  });
-  ctx.fillStyle='#6b7a90';ctx.font='11px sans-serif';
-  ctx.fillText('Seva Sarathi Program',padding,y+padding+16);
-  const a=document.createElement('a');
-  a.href=canvas.toDataURL('image/png');
-  a.download=`${title.replace(/\s/g,'_')}.png`;a.click();
+async function saveParamEdit(id){
+  const name=document.getElementById('pname-'+id)?.value.trim();
+  const short=document.getElementById('pshort-'+id)?.value.trim();
+  const channel=getSelectedChannel('pchan-'+id);
+  const wt=getSelectedWt('pwt-'+id);
+  if(!name){showToast('⚠️ Name required');return}
+  showLoading('Saving…');const res=await apiCall('admin_updateParam',{id,name,short:short||name.substring(0,14),channel,wt});hideLoading();
+  if(res.success){showToast('✅ Updated!');await loadParams();await fetchAndStoreParams()}else showToast('❌ '+res.error);
+}
+async function toggleParamActive(id,newActive){
+  showLoading((newActive?'Enabling':'Disabling')+'…');
+  const res=await apiCall('admin_updateParam',{id,active:newActive});hideLoading();
+  if(res.success){showToast(newActive?'✅ Enabled':'⏸ Disabled');await loadParams();await fetchAndStoreParams()}else showToast('❌ '+res.error);
+}
+async function confirmDeleteParam(id,name){
+  if(!confirm(`Delete "${name}"?\n\nThis marks it INACTIVE — historical data is preserved.\nUse "Disable" to temporarily hide instead.`))return;
+  showLoading('Deleting…');const res=await apiCall('admin_deleteParam',{id});hideLoading();
+  if(res.success){showToast('🗑 Deleted (marked inactive)');await loadParams();await fetchAndStoreParams()}else showToast('❌ '+res.error);
 }
 </script>
 </body>
